@@ -110,7 +110,7 @@ alias szsh='. ~/.zshrc'
 alias stmux='tmux source-file ~/.tmux.conf'
 alias gw='gulp -f && gulp watch -r'
 alias gs='gulp start'
-alias v='nvim'
+alias v='nvim -p'
 alias redx='cd ~/Documents/RedX'
 alias vortex='cd ~/Documents/vortex-app'
 

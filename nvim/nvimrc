@@ -53,6 +53,7 @@ Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'chrisbra/Colorizer'
 Plugin 'airblade/vim-gitgutter'
+Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'scrooloose/nerdtree'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'tiagofumo/vim-nerdtree-syntax-highlight'
@@ -74,6 +75,7 @@ syntax on
 let mapleader = ' '
 
 " Theme
+set background=dark
 let g:oceanic_next_terminal_bold = 1
 let g:oceanic_next_terminal_italic = 1
 colorscheme OceanicNext
@@ -156,6 +158,9 @@ let g:user_emmet_settings = {
 let g:ale_fixers = { 'javascript': ['prettier'], 'json': ['prettier'], 'css': ['prettier'], 'html': ['prettier'] }
 let g:ale_javascript_prettier_use_local_config = 1
 
+" Vim Indent Guides
+let g:indent_guides_enable_on_vim_startup = 1
+
 """""""""""""""""""""""""""""""""""""
 " Custom Functions
 """""""""""""""""""""""""""""""""""""
@@ -193,6 +198,8 @@ endfunction
 """""""""""""""""""""""""""""""""""""
 " Theme Alterations
 """""""""""""""""""""""""""""""""""""
+hi IndentGuidesOdd  ctermbg=237
+hi IndentGuidesEven ctermbg=236
 " hi LineNr  ctermbg=0
 " hi CursorLineNr  term=bold ctermbg=0 ctermfg=Blue
 " hi SignColumn ctermbg=0 ctermfg=15
