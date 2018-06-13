@@ -84,6 +84,8 @@ colorscheme OceanicNext
 " Line Numbers
 set number
 set relativenumber
+set cursorline
+" set cursorcolumn
 
 " Wrap text
 set wrap
