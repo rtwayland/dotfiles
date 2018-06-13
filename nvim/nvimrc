@@ -16,9 +16,12 @@ Plugin 'VundleVim/Vundle.vim'
 " Plugins
 """""""""""""""""""""""""""""""""""""
 " Syntax
-Plugin 'sheerun/vim-polyglot'
-Plugin 'jelera/vim-javascript-syntax'
+Plugin 'othree/yajs.vim'
 Plugin 'mxw/vim-jsx'
+Plugin 'elzr/vim-json'
+Plugin 'kchmck/vim-coffee-script'
+Plugin 'iloginow/vim-stylus'
+Plugin 'digitaltoad/vim-pug'
 
 " Formatting and Linting
 Plugin 'editorconfig/editorconfig-vim'
@@ -96,7 +99,7 @@ set ts=2 sts=2 sw=2 expandtab
 set listchars=tab:▸\ ,space:·,eol:¬
 
 " Search Highlight off toggle, toggled on when search is reactivated
-nmap <leader>h : noh<CR>
+nnoremap <leader>h : noh<CR>
 
 " Cursor
 if $TERM_PROGRAM =~ "iTerm.app"
@@ -107,9 +110,13 @@ endif
 """""""""""""""""""""""""""""""""""""
 " Mappings Config
 """""""""""""""""""""""""""""""""""""
+nnoremap <leader>sup :w<cr> :source $MYVIMRC<cr> :PluginInstall<cr>
+nnoremap <leader>so :w<cr> :source $MYVIMRC<cr>
 nnoremap <leader>ev :vsplit $MYVIMRC<cr>
 nnoremap <leader>sv :source $MYVIMRC<cr>
 nnoremap <leader>pi :PluginInstall<cr>
+nnoremap <leader>pc :PluginClean<cr>
+nnoremap <leader>pu :PluginUpdate<cr>
 inoremap kj <esc>
 inoremap <esc> <nop>
 nnoremap <leader>n : set relativenumber!<CR>
