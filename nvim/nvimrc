@@ -16,12 +16,9 @@ Plugin 'VundleVim/Vundle.vim'
 " Plugins
 """""""""""""""""""""""""""""""""""""
 " Syntax
-Plugin 'pangloss/vim-javascript'
+Plugin 'sheerun/vim-polyglot'
+Plugin 'jelera/vim-javascript-syntax'
 Plugin 'mxw/vim-jsx'
-Plugin 'elzr/vim-json'
-Plugin 'kchmck/vim-coffee-script'
-Plugin 'iloginow/vim-stylus'
-Plugin 'digitaltoad/vim-pug'
 
 " Formatting and Linting
 Plugin 'editorconfig/editorconfig-vim'
