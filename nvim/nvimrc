@@ -39,6 +39,7 @@ Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'justinmk/vim-sneak'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-sleuth'
 Plugin 'ervandew/supertab'
 Plugin 'SirVer/ultisnips'
 Plugin 'valloric/youcompleteme'
@@ -88,7 +89,7 @@ set wrap
 set ts=2 sts=2 sw=2 expandtab
 
 " Whitespaces
-"set listchars=tab:▸\ ,eol:¬
+set listchars=tab:▸\ ,space:·,eol:¬
 
 " Search Highlight off toggle, toggled on when search is reactivated
 nmap <leader>h : noh<CR>
@@ -114,12 +115,12 @@ nnoremap <leader>b :NERDTreeToggle<CR>
 noremap <C-p> :CtrlP<CR>
 
 " Indent In and Indent Out
-nmap <leader>i <<
-nmap <leader>o >>
-vmap <leader>i <gv
-vmap <leader>o >gv
-let g:multi_cursor_select_all_word_key = '<C-l>'
-let g:UltiSnipsExpandTrigger='<C-e>'
+nnoremap <leader>i <<
+nnoremap <leader>o >>
+vnoremap <leader>i <gv
+vnoremap <leader>o >gv
+let g:multi_cursor_select_all_word_key = '<leader>l'
+let g:UltiSnipsExpandTrigger='<leader><tab>'
 let g:UltiSnipsJumpForwardTrigger='<tab>'
 
 """""""""""""""""""""""""""""""""""""
