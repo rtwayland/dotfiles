@@ -48,8 +48,10 @@ Plugin 'tomtom/tcomment_vim'
 Plugin 'skwp/greplace.vim'
 Plugin 'christoomey/vim-tmux-navigator'
 
+" Themes
+Plugin 'mhartington/oceanic-next'
+
 " UI
-Plugin 'chriskempson/base16-vim'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'chrisbra/Colorizer'
@@ -75,8 +77,9 @@ syntax on
 let mapleader = ' '
 
 " Theme
-"let base16colorspace=256
-"colorscheme base16-default-dark
+let g:oceanic_next_terminal_bold = 1
+let g:oceanic_next_terminal_italic = 1
+colorscheme OceanicNext
 
 " Line Numbers
 set number
@@ -191,6 +194,8 @@ endfunction
 """""""""""""""""""""""""""""""""""""
 " Theme Alterations
 """""""""""""""""""""""""""""""""""""
-hi LineNr  ctermfg=Grey
-hi CursorLineNr  term=bold ctermfg=Blue
-hi SignColumn ctermfg=235
+" hi LineNr  ctermbg=0
+" hi CursorLineNr  term=bold ctermbg=0 ctermfg=Blue
+" hi SignColumn ctermbg=0 ctermfg=15
+" hi FoldColumn ctermbg=0 ctermfg=15
+" hi Pmenu ctermfg=15 ctermbg=0
