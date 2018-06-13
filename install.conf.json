@@ -13,17 +13,21 @@
     },
     {
         "link": {
-            "~/.zshrc": {
-                "path": "./zsh/zshrc",
+            "~/.config/nvim/init.vim": {
+                "create": true,
+                "path": "nvim/nvimrc",
+                "relink": true
+            },
+            "~/.tmux.conf": {
+                "path": "./tmux/tmux.conf",
                 "relink": true
             },
             "~/.vimrc": {
                 "path": "./vim/vimrc",
                 "relink": true
             },
-            "~/.config/nvim/init.vim": {
-                "create": true,
-                "path": "nvim/nvimrc",
+            "~/.zshrc": {
+                "path": "./zsh/zshrc",
                 "relink": true
             }
         }

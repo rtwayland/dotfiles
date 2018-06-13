@@ -107,6 +107,7 @@ load-nvmrc
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
 alias szsh='. ~/.zshrc'
+alias stmux='tmux source-file ~/.tmux.conf'
 alias gw='gulp -f && gulp watch -r'
 alias gs='gulp start'
 alias v='nvim'
