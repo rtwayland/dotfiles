@@ -1,0 +1,200 @@
+set encoding=UTF-8
+
+"""""""""""""""""""""""""""""""""""""
+" Vundle
+"""""""""""""""""""""""""""""""""""""
+set nocompatible              " be iMproved, required
+filetype off                  " required
+
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+" alternatively, pass a path where Vundle should install plugins
+"call vundle#begin('~/some/path/here')
+
+" let Vundle manage Vundle, required
+Plugin 'VundleVim/Vundle.vim'
+
+"""""""""""""""""""""""""""""""""""""
+" Plugins
+"""""""""""""""""""""""""""""""""""""
+" Syntax
+Plugin 'pangloss/vim-javascript'
+Plugin 'mxw/vim-jsx'
+Plugin 'elzr/vim-json'
+Plugin 'kchmck/vim-coffee-script'
+Plugin 'iloginow/vim-stylus'
+Plugin 'digitaltoad/vim-pug'
+
+" Formatting and Linting
+Plugin 'editorconfig/editorconfig-vim'
+Plugin 'mattn/emmet-vim'
+Plugin 'w0rp/ale'
+
+" Snippets
+Plugin 'honza/vim-snippets'
+Plugin 'epilande/vim-es2015-snippets'
+Plugin 'epilande/vim-react-snippets'
+
+" Utils
+Plugin 'tpope/vim-surround'
+Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'justinmk/vim-sneak'
+Plugin 'terryma/vim-multiple-cursors'
+Plugin 'tpope/vim-fugitive'
+Plugin 'ervandew/supertab'
+Plugin 'SirVer/ultisnips'
+Plugin 'valloric/youcompleteme'
+"Plugin 'Townk/vim-autoclose'
+Plugin 'Raimondi/delimitMate'
+Plugin 'tomtom/tcomment_vim'
+Plugin 'skwp/greplace.vim'
+
+" UI
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+Plugin 'chrisbra/Colorizer'
+Plugin 'airblade/vim-gitgutter'
+Plugin 'scrooloose/nerdtree'
+Plugin 'Xuyuanp/nerdtree-git-plugin'
+Plugin 'tiagofumo/vim-nerdtree-syntax-highlight'
+Plugin 'ryanoasis/vim-devicons'
+
+"""""""""""""""""""""""""""""""""""""
+" END Plugins
+"""""""""""""""""""""""""""""""""""""
+
+call vundle#end()            " required
+filetype plugin indent on    " required
+
+syntax enable
+syntax on
+
+"""""""""""""""""""""""""""""""""""""
+" Editor Config
+"""""""""""""""""""""""""""""""""""""
+let mapleader = ' '
+
+" Theme
+let base16colorspace=256
+colorscheme Tomorrow-Night-Eighties
+
+" Line Numbers
+set number
+set relativenumber
+
+" Wrap text
+set wrap
+
+" Tabs
+set ts=2 sts=2 sw=2 expandtab
+set smarttab
+
+" Whitespaces
+set listchars=tab:▸\ ,eol:¬
+
+" Backspace Fix
+set backspace=2 " make backspace work like most other programs
+
+" Search Highlight off toggle, toggled on when search is reactivated
+set hlsearch
+nmap <leader>h : noh<CR>
+
+" Cursor
+if $TERM_PROGRAM =~ "iTerm.app"
+    let &t_SI = "\<Esc>]50;CursorShape=1\x7" " Vertical bar in insert mode
+    let &t_EI = "\<Esc>]50;CursorShape=0\x7" " Block in normal mode
+endif
+
+"""""""""""""""""""""""""""""""""""""
+" Mappings Config
+"""""""""""""""""""""""""""""""""""""
+nnoremap <leader>ev :vsplit $MYVIMRC<cr>
+nnoremap <leader>sv :source $MYVIMRC<cr>
+inoremap kj <esc>
+inoremap <esc> <nop>
+nnoremap <leader>n : set relativenumber!<CR>
+nnoremap <leader>w : set list!<CR>
+nnoremap <leader>f :ALEFix<CR>
+nnoremap <leader>b :NERDTreeToggle<CR>
+noremap <C-p> :CtrlP<CR>
+
+" Indent In and Indent Out
+nmap <leader>i <<
+nmap <leader>o >>
+vmap <leader>i <gv
+vmap <leader>o >gv
+let g:multi_cursor_select_all_word_key = '<C-l>'
+let g:UltiSnipsExpandTrigger='<C-e>'
+let g:UltiSnipsJumpForwardTrigger='<tab>'
+
+"""""""""""""""""""""""""""""""""""""
+" Plugin Config
+"""""""""""""""""""""""""""""""""""""
+" Airline
+let g:airline_theme='base16'
+let g:airline_base16_improved_contrast = 1
+let g:airline#themes#base16#constant = 1
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#ale#enabled = 1
+
+" Devicons
+let g:webdevicons_conceal_nerdtree_brackets = 1
+let g:WebDevIconsNerdTreeAfterGlyphPadding = ' '
+
+" Ctrlp
+let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git'
+
+" DelimitMate
+let delimitMate_expand_cr=1
+
+" Emmet
+let g:user_emmet_settings = {
+  \  'javascript.jsx' : {
+    \      'extends' : 'jsx',
+    \  },
+  \}
+
+" Ale
+let g:ale_fixers = { 'javascript': ['prettier'], 'json': ['prettier'], 'css': ['prettier'], 'html': ['prettier'] }
+let g:ale_javascript_prettier_use_local_config = 1
+
+"""""""""""""""""""""""""""""""""""""
+" Custom Functions
+"""""""""""""""""""""""""""""""""""""
+" FormatJSON
+com! FormatJSON %!python -m json.tool
+
+" Set tabstop, softtabstop and shiftwidth to the same value
+command! -nargs=* Stab call Stab()
+function! Stab()
+  let l:tabstop = 1 * input('set tabstop = softtabstop = shiftwidth = ')
+  if l:tabstop > 0
+    let &l:sts = l:tabstop
+    let &l:ts = l:tabstop
+    let &l:sw = l:tabstop
+  endif
+  call SummarizeTabs()
+endfunction
+
+function! SummarizeTabs()
+  try
+    echohl ModeMsg
+    echon 'tabstop='.&l:ts
+    echon ' shiftwidth='.&l:sw
+    echon ' softtabstop='.&l:sts
+    if &l:et
+      echon ' expandtab'
+    else
+      echon ' noexpandtab'
+    endif
+  finally
+    echohl None
+  endtry
+endfunction
+
+"""""""""""""""""""""""""""""""""""""
+" Theme Alterations
+"""""""""""""""""""""""""""""""""""""
+hi LineNr  ctermfg=Grey
+hi CursorLineNr  term=bold ctermfg=Blue

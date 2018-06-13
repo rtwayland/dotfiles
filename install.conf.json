@@ -1,0 +1,39 @@
+[
+    {
+        "defaults": {
+            "link": {
+                "relink": true
+            }
+        }
+    },
+    {
+        "clean": [
+            "~"
+        ]
+    },
+    {
+        "link": {
+            "~/.zshrc": {
+                "path": "./zsh/zshrc",
+                "relink": true
+            },
+            "~/.vimrc": {
+                "path": "./vim/vimrc",
+                "relink": true
+            },
+            "~/.config/nvim/init.vim": {
+                "create": true,
+                "path": "nvim/nvimrc",
+                "relink": true
+            }
+        }
+    },
+    {
+        "shell": [
+            [
+                "git submodule update --init --recursive",
+                "Installing submodules"
+            ]
+        ]
+    }
+]
