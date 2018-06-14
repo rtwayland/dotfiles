@@ -108,11 +108,14 @@ load-nvmrc
 # For a full list of active aliases, run `alias`.
 alias szsh='. ~/.zshrc'
 alias stmux='tmux source-file ~/.tmux.conf'
+alias tat='tmux a -t'
+alias tsv='tmux new -s'
 alias gw='gulp -f && gulp watch -r'
 alias gs='gulp start'
 alias v='nvim -p'
 alias redx='cd ~/Documents/RedX'
 alias vortex='cd ~/Documents/vortex-app'
+alias sphere='cd ~/Documents/RedX/soi/client'
 
 alias go='git checkout'
 alias gd='git diff'

@@ -75,8 +75,6 @@ syntax on
 """""""""""""""""""""""""""""""""""""
 " Editor Config
 """""""""""""""""""""""""""""""""""""
-let mapleader = ' '
-
 " Theme
 set background=dark
 let g:oceanic_next_terminal_bold = 1
@@ -88,19 +86,12 @@ set number
 set relativenumber
 set cursorline
 " set cursorcolumn
-
 " Wrap text
 set wrap
-
 " Tabs
 set ts=2 sts=2 sw=2 expandtab
-
 " Whitespaces
 set listchars=tab:▸\ ,space:·,eol:¬
-
-" Search Highlight off toggle, toggled on when search is reactivated
-nnoremap <leader>h : noh<CR>
-
 " Cursor
 if $TERM_PROGRAM =~ "iTerm.app"
     let &t_SI = "\<Esc>]50;CursorShape=1\x7" " Vertical bar in insert mode
@@ -110,26 +101,40 @@ endif
 """""""""""""""""""""""""""""""""""""
 " Mappings Config
 """""""""""""""""""""""""""""""""""""
-nnoremap <leader>sup :w<cr> :source $MYVIMRC<cr> :PluginInstall<cr>
-nnoremap <leader>so :w<cr> :source $MYVIMRC<cr>
-nnoremap <leader>ev :vsplit $MYVIMRC<cr>
+let mapleader = ' '
+" Saving and quiting
+nnoremap <leader>w :w<cr>
+nnoremap <leader>wq :w<cr>:q<cr>
+nnoremap <leader>q :q<cr>
+nnoremap <leader>qf :q!<cr>
+" Sourcing
 nnoremap <leader>sv :source $MYVIMRC<cr>
+nnoremap <leader>so :w<cr> :source $MYVIMRC<cr>
+nnoremap <leader>sup :w<cr> :source $MYVIMRC<cr> :PluginInstall<cr>
+" Plugin Manager commands
 nnoremap <leader>pi :PluginInstall<cr>
 nnoremap <leader>pc :PluginClean<cr>
 nnoremap <leader>pu :PluginUpdate<cr>
+" Quick vimrc edit
+nnoremap <leader>ev :vsplit $MYVIMRC<cr>
+" Convenience
 inoremap kj <esc>
 inoremap <esc> <nop>
-nnoremap <leader>n : set relativenumber!<CR>
-nnoremap <leader>w : set list!<CR>
+" Toggle commands
+nnoremap <leader>n :set relativenumber!<CR>
+nnoremap <leader>ws :set list!<CR>
+"Search Highlight off toggle, toggled on when search is reactivated
+nnoremap <leader>h :noh<CR>
+" Utility commands
 nnoremap <leader>f :ALEFix<CR>
 nnoremap <leader>b :NERDTreeToggle<CR>
 noremap <C-p> :CtrlP<CR>
-
-" Indent In and Indent Out
+" Indent In (<) and Indent Out (>)
 nnoremap <leader>i <<
 nnoremap <leader>o >>
 vnoremap <leader>i <gv
 vnoremap <leader>o >gv
+" Plugin overrides
 let g:multi_cursor_select_all_word_key = '<leader>l'
 let g:UltiSnipsExpandTrigger='<leader><tab>'
 let g:UltiSnipsJumpForwardTrigger='<tab>'
@@ -172,9 +177,10 @@ let g:indent_guides_enable_on_vim_startup = 1
 " Custom Functions
 """""""""""""""""""""""""""""""""""""
 " FormatJSON
-com! FormatJSON %!python -m json.tool
+command! FormatJSON %!python -m json.tool
 
 " Set tabstop, softtabstop and shiftwidth to the same value
+" http://vimcasts.org/episodes/tabs-and-spaces
 command! -nargs=* Stab call Stab()
 function! Stab()
   let l:tabstop = 1 * input('set tabstop = softtabstop = shiftwidth = ')
