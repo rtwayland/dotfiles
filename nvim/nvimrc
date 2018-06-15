@@ -48,6 +48,7 @@ Plugin 'Raimondi/delimitMate'
 Plugin 'tomtom/tcomment_vim'
 Plugin 'skwp/greplace.vim'
 Plugin 'christoomey/vim-tmux-navigator'
+Plugin 'takac/vim-hardtime'
 
 " Themes
 Plugin 'mhartington/oceanic-next'
@@ -119,6 +120,7 @@ nnoremap <leader>ev :vsplit $MYVIMRC<cr>
 inoremap kj <esc>
 inoremap <esc> <nop>
 nnoremap <leader>lb <C-^>
+nnoremap <leader>ht :HardTimeToggle<cr>
 " Toggle commands
 nnoremap <leader>n :set relativenumber!<CR>
 nnoremap <leader>ws :set list!<CR>
