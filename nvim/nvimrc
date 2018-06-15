@@ -172,6 +172,9 @@ let g:ale_javascript_prettier_use_local_config = 1
 " Vim Indent Guides
 let g:indent_guides_enable_on_vim_startup = 1
 
+" Hard Time
+let g:hardtime_allow_different_key = 1
+
 """""""""""""""""""""""""""""""""""""
 " Custom Functions
 """""""""""""""""""""""""""""""""""""
