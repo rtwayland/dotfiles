@@ -40,6 +40,7 @@ Plugin 'justinmk/vim-sneak'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-sleuth'
+Plugin 'tpope/vim-vinegar'
 Plugin 'ervandew/supertab'
 Plugin 'SirVer/ultisnips'
 Plugin 'valloric/youcompleteme'
@@ -57,9 +58,6 @@ Plugin 'vim-airline/vim-airline-themes'
 Plugin 'chrisbra/Colorizer'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'nathanaelkane/vim-indent-guides'
-Plugin 'scrooloose/nerdtree'
-Plugin 'Xuyuanp/nerdtree-git-plugin'
-Plugin 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plugin 'ryanoasis/vim-devicons'
 
 """""""""""""""""""""""""""""""""""""
@@ -120,6 +118,7 @@ nnoremap <leader>ev :vsplit $MYVIMRC<cr>
 " Convenience
 inoremap kj <esc>
 inoremap <esc> <nop>
+nnoremap <leader>lb <C-^>
 " Toggle commands
 nnoremap <leader>n :set relativenumber!<CR>
 nnoremap <leader>ws :set list!<CR>
@@ -127,7 +126,6 @@ nnoremap <leader>ws :set list!<CR>
 nnoremap <leader>h :noh<CR>
 " Utility commands
 nnoremap <leader>f :ALEFix<CR>
-nnoremap <leader>b :NERDTreeToggle<CR>
 noremap <C-p> :CtrlP<CR>
 " Indent In (<) and Indent Out (>)
 nnoremap <leader>i <<
@@ -135,7 +133,7 @@ nnoremap <leader>o >>
 vnoremap <leader>i <gv
 vnoremap <leader>o >gv
 " Plugin overrides
-let g:multi_cursor_select_all_word_key = '<leader>l'
+let g:multi_cursor_select_all_word_key = '<leader>L'
 let g:UltiSnipsExpandTrigger='<leader><tab>'
 let g:UltiSnipsJumpForwardTrigger='<tab>'
 
@@ -148,14 +146,12 @@ let g:airline_base16_improved_contrast = 1
 let g:airline#themes#base16#constant = 1
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#ale#enabled = 1
-
-" Devicons
-let g:webdevicons_conceal_nerdtree_brackets = 1
-let g:WebDevIconsNerdTreeAfterGlyphPadding = ' '
+let g:airline#extensions#tabline#formatter = 'unique_tail'
 
 " Ctrlp
 let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git'
-
+let g:ctrlp_by_filename = 1
+let g:ctrlp_show_hidden = 1
 " DelimitMate
 let delimitMate_expand_cr=1
 
