@@ -120,6 +120,7 @@ nnoremap <leader>ev :vsplit $MYVIMRC<cr>
 inoremap kj <esc>
 inoremap <esc> <nop>
 nnoremap <leader>lb <C-^>
+tnoremap <esc> <C-\><C-n>
 nnoremap <leader>ht :HardTimeToggle<cr>
 " Toggle commands
 nnoremap <leader>n :set relativenumber!<CR>
