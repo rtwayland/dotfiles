@@ -173,6 +173,8 @@ let g:ale_javascript_prettier_use_local_config = 1
 let g:indent_guides_enable_on_vim_startup = 1
 
 " Hard Time
+let g:list_of_normal_keys = ["h", "j", "k", "l", "+", "<UP>", "<DOWN>", "<LEFT>", "<RIGHT>"]
+let g:list_of_visual_keys = ["h", "j", "k", "l", "+", "<UP>", "<DOWN>", "<LEFT>", "<RIGHT>"]
 let g:hardtime_allow_different_key = 1
 
 """""""""""""""""""""""""""""""""""""
