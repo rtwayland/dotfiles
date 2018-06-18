@@ -74,6 +74,7 @@ syntax on
 """""""""""""""""""""""""""""""""""""
 " Editor Config
 """""""""""""""""""""""""""""""""""""
+set wildignore+=**/node_modules/**
 " Theme
 set background=dark
 let g:oceanic_next_terminal_bold = 1
@@ -84,7 +85,6 @@ colorscheme OceanicNext
 set number
 set relativenumber
 set cursorline
-" set cursorcolumn
 " Wrap text
 set wrap
 " Tabs
