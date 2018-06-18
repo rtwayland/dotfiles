@@ -49,6 +49,7 @@ Plugin 'tomtom/tcomment_vim'
 Plugin 'skwp/greplace.vim'
 Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'takac/vim-hardtime'
+Plugin 'mileszs/ack.vim'
 
 " Themes
 Plugin 'mhartington/oceanic-next'
@@ -74,6 +75,7 @@ syntax on
 """""""""""""""""""""""""""""""""""""
 " Editor Config
 """""""""""""""""""""""""""""""""""""
+set hidden
 set wildignore+=**/node_modules/**
 " Theme
 set background=dark
@@ -135,6 +137,10 @@ nnoremap <leader>i <<
 nnoremap <leader>o >>
 vnoremap <leader>i <gv
 vnoremap <leader>o >gv
+" Buffer commands
+nnoremap <leader>bk :bn<cr>
+nnoremap <leader>bj :bp<cr>
+nnoremap <leader>bd :bd<cr>
 " Plugin overrides
 let g:multi_cursor_select_all_word_key = '<leader>L'
 let g:UltiSnipsExpandTrigger='<leader><tab>'
