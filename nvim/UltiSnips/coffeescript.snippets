@@ -1,0 +1,20 @@
+snippet vlog "Log to Vortex"
+app.log('${1:type}', '${2:message}'${3:, ${4:var}})
+endsnippet
+
+snippet af "arrow function"
+(${1:arguments}) -> ${2:statement}
+endsnippet
+
+snippet afb "arrow function with body"
+(${1:arguments}) ->
+	${0}
+endsnippet
+
+snippet log "console log"
+console.log '${1:msg}'
+endsnippet
+
+snippet mformat "MomentJs Format"
+moment('${1:timeString}').format('dddd, MMMM Do YYYY, h:mm:ss a')
+endsnippet

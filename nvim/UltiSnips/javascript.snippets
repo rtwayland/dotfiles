@@ -1,0 +1,249 @@
+snippet imf "import"
+import $1 from '$2'
+endsnippet
+
+snippet imn "importModuleName"
+import { $1 } from '$2'
+endsnippet
+
+snippet af "arrow function"
+(${1:arguments}) => ${2:statement}
+endsnippet
+
+snippet afb "arrow function with body"
+(${1:arguments}) => {
+	${0}
+}
+endsnippet
+
+snippet pd "preventDefault()"
+preventDefault()
+endsnippet
+
+snippet styc "styled component"
+const ${1:name} = styled.${2:element}({
+	${0}
+})
+endsnippet
+
+snippet styf "styled component function"
+({${1:variable}}) => ({
+	${0}
+})
+endsnippet
+
+snippet thca ".then.catch"
+.then((${1:arguments}) => {
+	${0}
+})
+.catch((err) => {
+	if (err) throw err
+})
+endsnippet
+
+snippet hoc "higher order component"
+export default function(ComposedComponent) {
+	class ${1:name} extends Component {
+		render() {
+			return <ComposedComponent {...this.props} />
+		}
+	}
+	return ${1:name}
+}
+endsnippet
+
+snippet rce "React.createElement"
+React.createElement(${1:'${2:elm}'}, ${3:null}, ${4:'${5:child}'})
+endsnippet
+
+snippet csup "Component constructor with super()"
+constructor(props) {
+	super(props)
+	this.state = {
+		${1:property}: ${2:value}
+	}
+}
+endsnippet
+
+snippet scu "React shouldComponentUpdate()"
+shouldComponentUpdate(nextProps, nextState, nextContext) {
+	${0}
+}
+endsnippet
+
+# Below snippets are pulled from EQuimper
+# https://github.com/EQuimper/VSC-React-Native-React-Redux-Snippets-Version-Standard
+
+snippet cmmb "Comment Big Block"
+/**
+|--------------------------------------------------
+| $1
+|--------------------------------------------------
+*/
+endsnippet
+
+snippet cm "Comment Block"
+/**
+ * ${1}
+ */
+endsnippet
+
+snippet cbl "Comment big line"
+// ============================================================
+endsnippet
+
+snippet ccs "Component Class"
+class $1 extends Component {
+	state = { $2 }
+	render() {
+		return (
+			$3
+		)
+	}
+}
+
+export default $1
+endsnippet
+
+snippet cdm "ComponentDidMount"
+componentDidMount() {
+	$1
+}
+endsnippet
+
+snippet cdu "ComponentDidUpdate"
+componentDidUpdate(prevProps, prevState) {
+	$1
+}
+endsnippet
+
+snippet cwm "ComponentWillMount"
+componentWillMount() {
+	$1
+}
+endsnippet
+
+snippet cwrp "ComponentWillReceiveProps"
+componentWillReceiveProps(nextProps) {
+	$1
+}
+endsnippet
+
+snippet cwum "ComponentWillUnmount"
+componentWillUnmount() {
+	$1
+}
+endsnippet
+
+snippet cwu "ComponentWillUpdate"
+componentWillUpdate() {
+	$1
+}
+endsnippet
+
+snippet crr "Connect Redux"
+import { connect } from 'react-redux'
+endsnippet
+
+snippet log "Console Log"
+console.log('====================================')
+console.log($1)
+console.log('====================================')
+endsnippet
+
+snippet edl "EslintDisableLine"
+// eslint-disable-line
+endsnippet
+
+snippet estyc "Export Styled Component"
+export const $1 = styled.$2`
+	$3
+`
+endsnippet
+
+snippet ed "Export default"
+export default $1
+endsnippet
+
+snippet edccs "Export default Component Class"
+export default class $1 extends Component {
+	state = { $2 }
+	render() {
+		return (
+			$3
+		)
+	}
+}
+endsnippet
+
+snippet edstyc "Export default Styled Component"
+export default styled.$1`
+	$2
+`
+endsnippet
+
+snippet imr "Import react"
+import React from 'react'
+endsnippet
+
+snippet imrc "Import react component"
+import React, { Component } from 'react'
+endsnippet
+
+snippet cl "Print to console"
+console.log($1)
+endsnippet
+
+snippet rpf "Redux Pure Function"
+export const $1 = '$1'
+
+export function $2($3) {
+	return {
+		type: $1,
+		$3
+	}
+}
+endsnippet
+
+snippet rpc "Redux Pure Function Const"
+export const $1 = '$1'
+
+export const $2 = $3 => ({
+	type: $1,
+	$3
+})
+endsnippet
+
+snippet rrd "Redux Reducer"
+export default (state = $1, action) => {
+	switch (action.type) {
+		case $2:
+			$3
+		default:
+			return state
+	}
+}
+endsnippet
+
+snippet rct "Redux constant"
+export const $1 = '$1'
+endsnippet
+
+snippet sl "Stateless Component"
+const $1 = () => (
+	$2
+)
+
+export default $1
+endsnippet
+
+snippet slc "Stateless Component Function"
+function $1($2) {
+	$3
+}
+
+export default $1
+endsnippet
+
+# End EQuimper snippets
+

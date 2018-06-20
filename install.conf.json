@@ -18,6 +18,11 @@
                 "path": "nvim/nvimrc",
                 "relink": true
             },
+            "~/.config/nvim/UltiSnips": {
+                "create": true,
+                "path": "nvim/UltiSnips",
+                "relink": true
+            },
             "~/.tmux.conf": {
                 "path": "./tmux/tmux.conf",
                 "relink": true
