@@ -138,9 +138,10 @@ nnoremap <leader>o >>
 vnoremap <leader>i <gv
 vnoremap <leader>o >gv
 " Buffer commands
-nnoremap <leader>bk :bn<cr>
-nnoremap <leader>bj :bp<cr>
+nnoremap ¬ :bn<cr>
+nnoremap ˙ :bp<cr>
 nnoremap <leader>bd :bd<cr>
+nnoremap ƒ :Ack!<space>
 " Plugin overrides
 let g:multi_cursor_select_all_word_key = '<leader>L'
 let g:UltiSnipsExpandTrigger='<leader><tab>'
