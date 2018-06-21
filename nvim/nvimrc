@@ -75,6 +75,8 @@ syntax on
 """""""""""""""""""""""""""""""""""""
 set hidden
 set wildignore+=**/node_modules/**
+set splitbelow
+set splitright
 " Theme
 set background=dark
 let g:oceanic_next_terminal_bold = 1
@@ -122,6 +124,13 @@ inoremap <esc> <nop>
 nnoremap <leader>lb <C-^>
 tnoremap <esc> <C-\><C-n>
 nnoremap <leader>ht :HardTimeToggle<cr>
+nnoremap <leader>tm :Term<cr>
+" Window resizing. Alt + ljkh= (small h & v, large v & h, = size)
+nnoremap <silent> ¬ <C-W><
+nnoremap <silent> ∆ <C-W>-
+nnoremap <silent> ˚ <C-W>+
+nnoremap <silent> ˙ <C-W>>
+nnoremap <silent> ≠ <C-W>=
 " Toggle commands
 nnoremap <leader>n :set relativenumber!<CR>
 nnoremap <leader>ws :set list!<CR>
@@ -135,10 +144,11 @@ nnoremap <leader>i <<
 nnoremap <leader>o >>
 vnoremap <leader>i <gv
 vnoremap <leader>o >gv
-" Buffer commands
-nnoremap ¬ :bn<cr>
-nnoremap ˙ :bp<cr>
+" Buffer commands. Alt + ; = next buff, Alt + , = prev
+nnoremap … :bn<cr>
+nnoremap ≤ :bp<cr>
 nnoremap <leader>bd :bd<cr>
+" Searching
 nnoremap ƒ :Ack!<space>
 " Space and Tab Conversion
 nnoremap <leader>sp :Tab2Space<cr>
@@ -190,6 +200,8 @@ let g:hardtime_allow_different_key = 1
 """""""""""""""""""""""""""""""""""""
 " Custom Functions
 """""""""""""""""""""""""""""""""""""
+" Open terminal in horizontal split sized to 15
+command! Term 15sp | term 
 " FormatJSON
 command! FormatJSON %!python -m json.tool
 
