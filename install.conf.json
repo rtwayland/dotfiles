@@ -15,24 +15,29 @@
         "link": {
             "~/.config/nvim/init.vim": {
                 "create": true,
-                "path": "nvim/nvimrc",
+                "path": "vim/nvimrc",
                 "relink": true
             },
             "~/.config/nvim/UltiSnips": {
                 "create": true,
-                "path": "nvim/UltiSnips",
+                "path": "vim/UltiSnips",
                 "relink": true
             },
-            "~/.tmux.conf": {
-                "path": "./tmux/tmux.conf",
+            "~/.vim/bundle/Vundle.vim": {
+                "create": true,
+                "path": "vim/Vundle.vim",
                 "relink": true
             },
             "~/.vimrc": {
-                "path": "./vim/vimrc",
+                "path": "vim/nvimrc",
+                "relink": true
+            },
+            "~/.tmux.conf": {
+                "path": "tmux.conf",
                 "relink": true
             },
             "~/.zshrc": {
-                "path": "./zsh/zshrc",
+                "path": "zshrc",
                 "relink": true
             }
         }
