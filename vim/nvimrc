@@ -90,6 +90,8 @@ colorscheme OceanicNext
 set number
 set relativenumber
 set cursorline
+" Fixed Gutter Width
+set signcolumn=yes
 " Wrap text
 set wrap
 " Tabs
@@ -121,7 +123,9 @@ nnoremap <leader>sup :w<cr> :source $MYVIMRC<cr> :PluginInstall<cr>
 nnoremap <leader>pi :PluginInstall<cr>
 nnoremap <leader>pc :PluginClean<cr>
 nnoremap <leader>pu :PluginUpdate<cr>
-" Quick vimrc edit
+" Quick  edit
+nnoremap <leader>vs :vsplit<space>
+nnoremap <leader>hs :split<space>
 nnoremap <leader>ev :vsplit $MYVIMRC<cr>
 " Convenience
 inoremap kj <esc>
@@ -139,6 +143,7 @@ nnoremap <silent> ≠ <C-W>=
 nnoremap <leader>n :set relativenumber!<CR>
 nnoremap <leader>ws :set list!<CR>
 nnoremap <leader>ht :HardTimeToggle<cr>
+nnoremap <leader>ch :ColorToggle<cr>
 "Search Highlight off toggle, toggled on when search is reactivated
 nnoremap <leader>h :noh<CR>
 " Utility commands
@@ -163,6 +168,8 @@ nnoremap <leader>tb :Space2Tab<cr>
 let g:multi_cursor_select_all_word_key = '<leader>L'
 let g:UltiSnipsExpandTrigger='<leader><tab>'
 let g:UltiSnipsJumpForwardTrigger='<tab>'
+nnoremap <leader>ha <Plug>GitGutterStageHunk
+nnoremap <leader>hr <Plug>GitGutterUndoHunk
 
 """""""""""""""""""""""""""""""""""""
 " Plugin Config
