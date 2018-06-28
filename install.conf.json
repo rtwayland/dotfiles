@@ -36,6 +36,10 @@
                 "path": "tmux.conf",
                 "relink": true
             },
+            "~/.tern.config": {
+                "path": "tern.config",
+                "relink": true
+            },
             "~/.zshrc": {
                 "path": "zshrc",
                 "relink": true
