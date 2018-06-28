@@ -138,6 +138,7 @@ nnoremap <leader>ev :vsplit $MYVIMRC<cr>
 inoremap kj <esc>
 tnoremap <esc> <C-\><C-n>
 nnoremap <leader>tm :Term<cr>
+nnoremap <leader>; ^vg_
 " Folding
 nnoremap <cr> za
 " Disabled
