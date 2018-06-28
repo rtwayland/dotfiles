@@ -78,8 +78,13 @@ syntax on
 """""""""""""""""""""""""""""""""""""
 set hidden
 set wildignore+=**/node_modules/**
+" Splits
 set splitbelow
 set splitright
+" Folds
+set foldmethod=indent
+set foldlevel=1
+set foldclose=all
 " Theme
 set background=dark
 let g:oceanic_next_terminal_bold = 1
@@ -131,6 +136,8 @@ nnoremap <leader>ev :vsplit $MYVIMRC<cr>
 inoremap kj <esc>
 tnoremap <esc> <C-\><C-n>
 nnoremap <leader>tm :Term<cr>
+" Folding
+nnoremap <cr> za
 " Disabled
 inoremap <esc> <nop>
 " Window resizing. Alt + ljkh= (small h & v, large v & h, = size)
