@@ -64,6 +64,7 @@ Plugin 'chrisbra/Colorizer'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'machakann/vim-highlightedyank'
+Plugin 'kshenoy/vim-signature'
 Plugin 'ryanoasis/vim-devicons'
 
 """""""""""""""""""""""""""""""""""""
