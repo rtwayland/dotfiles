@@ -63,6 +63,7 @@ Plugin 'vim-airline/vim-airline-themes'
 Plugin 'chrisbra/Colorizer'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'nathanaelkane/vim-indent-guides'
+Plugin 'machakann/vim-highlightedyank'
 Plugin 'ryanoasis/vim-devicons'
 
 """""""""""""""""""""""""""""""""""""
@@ -80,13 +81,14 @@ syntax on
 """""""""""""""""""""""""""""""""""""
 set hidden
 set wildignore+=**/node_modules/**
+set inccommand=nosplit
 " Splits
 set splitbelow
 set splitright
 " Folds
 set foldmethod=indent
 set foldlevel=1
-set foldclose=all
+" set foldclose=all
 " Theme
 set background=dark
 let g:oceanic_next_terminal_bold = 1
@@ -291,8 +293,5 @@ endfunction
 """""""""""""""""""""""""""""""""""""
 hi IndentGuidesOdd  ctermbg=237
 hi IndentGuidesEven ctermbg=236
-" hi LineNr  ctermbg=0
-" hi CursorLineNr  term=bold ctermbg=0 ctermfg=Blue
-" hi SignColumn ctermbg=0 ctermfg=15
-" hi FoldColumn ctermbg=0 ctermfg=15
-" hi Pmenu ctermfg=15 ctermbg=0
+hi HighlightedyankRegion cterm=reverse gui=reverse
+
