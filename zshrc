@@ -112,7 +112,7 @@ load-nvmrc
 # export SSH_KEY_PATH="~/.ssh/rsa_id"
 
 # Allow bash keybindings ( ^k, ^y, etc)
-bindkey -e
+bindkey -v
 
 source ~/.oh-my-zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 . `brew --prefix`/etc/profile.d/z.sh
