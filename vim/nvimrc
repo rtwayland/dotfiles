@@ -89,6 +89,7 @@ set splitright
 " Folds
 set foldmethod=indent
 set foldlevel=1
+set foldlevelstart=99
 " set foldclose=all
 " Theme
 set background=dark
@@ -107,7 +108,7 @@ set wrap
 " Tabs
 set ts=2 sts=2 sw=2 expandtab
 " Whitespaces
-set listchars=tab:▸\ ,space:·,eol:¬
+set listchars=tab:→\ ,space:·,eol:¬
 " Backspace Fix for Vim
 set backspace=2
 " Cursor
@@ -162,6 +163,11 @@ nnoremap <leader>h :noh<CR>
 " Utility commands
 nnoremap <leader>f :ALEFix<CR>
 noremap <C-p> :CtrlP<CR>
+nnoremap <leader>gs :Gstatus<CR>
+nnoremap <leader>gw :Gwrite<CR>
+nnoremap <leader>gc :Gcommit<CR>
+nnoremap <leader>gd :Gdiff<CR>
+nnoremap <leader>gb :Gblame<CR>
 " Indent In (<) and Indent Out (>)
 nnoremap <leader>i <<
 nnoremap <leader>o >>
@@ -180,7 +186,7 @@ nnoremap <leader>tb :Space2Tab<cr>
 " Plugin overrides
 let g:multi_cursor_select_all_word_key = '<leader>L'
 let g:UltiSnipsExpandTrigger='<leader><tab>'
-let g:UltiSnipsJumpForwardTrigger='<tab>'
+" let g:UltiSnipsJumpForwardTrigger='<tab>'
 nnoremap <leader>ha <Plug>GitGutterStageHunk
 nnoremap <leader>hr <Plug>GitGutterUndoHunk
 
