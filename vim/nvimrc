@@ -55,7 +55,7 @@ Plugin 'mileszs/ack.vim'
 Plugin 'jbranchaud/vim-bdubs'
 
 " Themes
-Plugin 'mhartington/oceanic-next'
+Plugin 'chriskempson/base16-vim'
 
 " UI
 Plugin 'vim-airline/vim-airline'
@@ -92,10 +92,9 @@ set foldlevel=1
 set foldlevelstart=99
 " set foldclose=all
 " Theme
+set termguicolors
 set background=dark
-let g:oceanic_next_terminal_bold = 1
-let g:oceanic_next_terminal_italic = 1
-colorscheme OceanicNext
+colorscheme base16-eighties
 
 " Line Numbers
 set number
@@ -298,7 +297,9 @@ endfunction
 """""""""""""""""""""""""""""""""""""
 " Theme Alterations
 """""""""""""""""""""""""""""""""""""
-hi IndentGuidesOdd  ctermbg=237
-hi IndentGuidesEven ctermbg=236
+" hi IndentGuidesOdd  ctermbg=237 guibg=#3a3a3a
+" hi IndentGuidesEven ctermbg=236 guibg=#1c1c1c
 hi HighlightedyankRegion cterm=reverse gui=reverse
+hi SignColumn ctermbg=235 guibg=#2d2d2d
+hi LineNr ctermbg=235 guibg=#2d2d2d
 
