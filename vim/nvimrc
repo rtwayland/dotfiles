@@ -53,6 +53,8 @@ Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'takac/vim-hardtime'
 Plugin 'mileszs/ack.vim'
 Plugin 'jbranchaud/vim-bdubs'
+Plugin 'xolox/vim-session'
+Plugin 'xolox/vim-misc'
 
 " Themes
 Plugin 'chriskempson/base16-vim'
