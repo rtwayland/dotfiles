@@ -1,22 +1,25 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 ZSH_DISABLE_COMPFIX=true
-# Path to your oh-my-zsh installation.
+####################################
+# oh-my-zsh setup
+####################################
 export ZSH=/Users/raleighwayland/.oh-my-zsh
+source $ZSH/oh-my-zsh.sh
 
+####################################
+# Designate neovim as default editor
+####################################
 export EDITOR='nvim'
 
-# Set name of the theme to load. Optionally, if you set this to "random"
-# it'll load a random theme each time that oh-my-zsh is loaded.
-# See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-# ZSH_THEME="bira"
+####################################
+# ZSH theme https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
+####################################
 ZSH_THEME="avit"
 
-
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
-# For a full list of active aliases, run `alias`.
+####################################
+# Aliases
+####################################
 alias szsh='. ~/.zshrc'
 alias stmux='tmux source-file ~/.tmux.conf'
 alias tat='tmux a -t'
@@ -48,27 +51,15 @@ alias gapply='git stash apply'
 alias pg_dump='/Applications/Postgres.app/Contents/Versions/10/bin/pg_dump'
 alias jmeter='/Applications/apache-jmeter-4.0/bin/jmeter'
 
-# Uncomment the following line to enable command auto-correction.
-# ENABLE_CORRECTION="true"
-
-# Uncomment the following line if you want to change the command execution time
-# stamp shown in the history command output.
-# The optional three formats: "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
-# HIST_STAMPS="mm/dd/yyyy"
-
-# Would you like to use another custom folder than $ZSH/custom?
-# ZSH_CUSTOM=/path/to/new-custom-folder
-
-# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
+####################################
+# Plugins ~/.oh-my-zsh/plugins/*
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
-# Example format: plugins=(rails git textmate ruby lighthouse)
-# Add wisely, as too many plugins slow down shell startup.
+####################################
 plugins=(git brew npm vi-mode)
 
-source $ZSH/oh-my-zsh.sh
-
-# User configuration
-# nvm
+####################################
+# NVM Config
+####################################
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
 
@@ -95,28 +86,47 @@ load-nvmrc() {
 
 add-zsh-hook chpwd load-nvmrc
 load-nvmrc
-# export MANPATH="/usr/local/man:$MANPATH"
 
-# You may need to manually set your language environment
-# export LANG=en_US.UTF-8
-
-# Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
-
-# Compilation flags
-# export ARCHFLAGS="-arch x86_64"
-
-# ssh
-# export SSH_KEY_PATH="~/.ssh/rsa_id"
-
-# Allow bash keybindings ( ^k, ^y, etc)
+####################################
+# Vi mode Config
+####################################
 bindkey -v
+export KEYTIMEOUT=10
+bindkey -M viins 'kj' vi-cmd-mode
+# https://emily.st/2013/05/03/zsh-vi-cursor
+function zle-keymap-select zle-line-init
+{
+	# change cursor shape in iTerm2
+	case $KEYMAP in
+		vicmd)      print -n -- "\E]50;CursorShape=0\C-G";;  # block cursor
+		viins|main) print -n -- "\E]50;CursorShape=1\C-G";;  # line cursor
+	esac
 
-source ~/.oh-my-zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+	zle reset-prompt
+	zle -R
+}
+
+function zle-line-finish
+{
+	print -n -- "\E]50;CursorShape=0\C-G"  # block cursor
+}
+
+zle -N zle-line-init
+zle -N zle-line-finish
+zle -N zle-keymap-select
+
+####################################
+# Directory completion with Z
+####################################
 . `brew --prefix`/etc/profile.d/z.sh
 
+####################################
+# Yarn config...
+####################################
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+
+####################################
+# Terminal syntax highlighting
+####################################
+source ~/.oh-my-zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
