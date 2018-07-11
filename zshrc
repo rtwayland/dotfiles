@@ -5,7 +5,6 @@ ZSH_DISABLE_COMPFIX=true
 # oh-my-zsh setup
 ####################################
 export ZSH=/Users/raleighwayland/.oh-my-zsh
-source $ZSH/oh-my-zsh.sh
 
 ####################################
 # Designate neovim as default editor
@@ -56,6 +55,7 @@ alias jmeter='/Applications/apache-jmeter-4.0/bin/jmeter'
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 ####################################
 plugins=(git brew npm vi-mode)
+source $ZSH/oh-my-zsh.sh
 
 ####################################
 # NVM Config
