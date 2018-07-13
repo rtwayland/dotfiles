@@ -89,17 +89,37 @@ load-nvmrc
 
 ####################################
 # Vi mode Config
+# Set a fast timeout.
+# Remap esc
+# Customize cursor shape.
 ####################################
 bindkey -v
 export KEYTIMEOUT=10
 bindkey -M viins 'kj' vi-cmd-mode
-# https://emily.st/2013/05/03/zsh-vi-cursor
+# Change cursor shape depending on insert/command mode for vi-mode
+# https://github.com/jcorbin/home/blob/master/.zsh/rc.d/vi-mode-cursor
+function print_dcs
+{
+  print -n -- "\EP$1;\E$2\E\\"
+}
+
+function set_cursor_shape
+{
+  if [ -n "$TMUX" ]; then
+    # tmux will only forward escape sequences to the terminal if surrounded by
+    # a DCS sequence
+    print_dcs tmux "\E]50;CursorShape=$1\C-G"
+  else
+    print -n -- "\E]50;CursorShape=$1\C-G"
+  fi
+}
+
 function zle-keymap-select zle-line-init
 {
 	# change cursor shape in iTerm2
 	case $KEYMAP in
-		vicmd)      print -n -- "\E]50;CursorShape=0\C-G";;  # block cursor
-		viins|main) print -n -- "\E]50;CursorShape=1\C-G";;  # line cursor
+		vicmd)      set_cursor_shape 0;; # block cursor
+		viins|main) set_cursor_shape 1;; # line cursor
 	esac
 
 	zle reset-prompt
@@ -108,7 +128,7 @@ function zle-keymap-select zle-line-init
 
 function zle-line-finish
 {
-	print -n -- "\E]50;CursorShape=0\C-G"  # block cursor
+	set_cursor_shape 0 # block cursor
 }
 
 zle -N zle-line-init
