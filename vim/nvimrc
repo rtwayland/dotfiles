@@ -163,6 +163,8 @@ nnoremap <leader>ch :ColorToggle<cr>
 nnoremap <leader>h :noh<CR>
 " Utility commands
 nnoremap <leader>f :ALEFix<CR>
+nnoremap [l :ALEPrevious<CR>
+nnoremap ]l :ALENext<CR>
 noremap <C-p> :CtrlP<CR>
 nnoremap <leader>gs :Gstatus<CR>
 nnoremap <leader>gw :Gwrite<CR>
