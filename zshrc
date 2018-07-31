@@ -33,12 +33,9 @@ alias vortex='cd ~/Documents/vortex-app'
 alias sphere='cd ~/Documents/RedX/soi/client'
 
 alias go='git checkout'
-alias gd='git diff'
-alias ga='git add'
 alias pull='git pull'
 alias push='git push'
 alias gall='git add .'
-alias gb='git branch'
 alias gcm='git commit -m'
 alias gcam='git commit -am'
 alias gmr='git merge'
@@ -54,7 +51,7 @@ alias jmeter='/Applications/apache-jmeter-4.0/bin/jmeter'
 # Plugins ~/.oh-my-zsh/plugins/*
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 ####################################
-plugins=(git brew npm vi-mode)
+plugins=(git brew npm tmux vi-mode)
 source $ZSH/oh-my-zsh.sh
 
 ####################################
@@ -67,21 +64,21 @@ export NVM_DIR="$HOME/.nvm"
 #
 autoload -U add-zsh-hook
 load-nvmrc() {
-	local node_version="$(nvm version)"
-	local nvmrc_path="$(nvm_find_nvmrc)"
+        local node_version="$(nvm version)"
+        local nvmrc_path="$(nvm_find_nvmrc)"
 
-	if [ -n "$nvmrc_path" ]; then
-		local nvmrc_node_version=$(nvm version "$(cat "${nvmrc_path}")")
+        if [ -n "$nvmrc_path" ]; then
+                local nvmrc_node_version=$(nvm version "$(cat "${nvmrc_path}")")
 
-		if [ "$nvmrc_node_version" = "N/A" ]; then
-		nvm install
-		elif [ "$nvmrc_node_version" != "$node_version" ]; then
-		nvm use
-		fi
-	elif [ "$node_version" != "$(nvm version default)" ]; then
-		echo "Reverting to nvm default version"
-		nvm use default
-	fi
+                if [ "$nvmrc_node_version" = "N/A" ]; then
+                nvm install
+                elif [ "$nvmrc_node_version" != "$node_version" ]; then
+                nvm use
+                fi
+        elif [ "$node_version" != "$(nvm version default)" ]; then
+                echo "Reverting to nvm default version"
+                nvm use default
+        fi
 }
 
 add-zsh-hook chpwd load-nvmrc
@@ -116,19 +113,19 @@ function set_cursor_shape
 
 function zle-keymap-select zle-line-init
 {
-	# change cursor shape in iTerm2
-	case $KEYMAP in
-		vicmd)      set_cursor_shape 0;; # block cursor
-		viins|main) set_cursor_shape 1;; # line cursor
-	esac
+  # change cursor shape in iTerm2
+  case $KEYMAP in
+    vicmd)      set_cursor_shape 0;; # block cursor
+    viins|main) set_cursor_shape 1;; # line cursor
+  esac
 
-	zle reset-prompt
-	zle -R
+  zle reset-prompt
+  zle -R
 }
 
 function zle-line-finish
 {
-	set_cursor_shape 0 # block cursor
+  set_cursor_shape 0 # block cursor
 }
 
 zle -N zle-line-init
