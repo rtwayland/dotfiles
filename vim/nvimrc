@@ -306,4 +306,4 @@ endfunction
 hi HighlightedyankRegion cterm=reverse gui=reverse
 hi SignColumn ctermbg=235 guibg=#2d2d2d
 hi LineNr ctermbg=235 guibg=#2d2d2d
-
+set guicursor+=n:blinkon1
