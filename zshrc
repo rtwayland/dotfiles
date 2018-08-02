@@ -51,7 +51,7 @@ alias jmeter='/Applications/apache-jmeter-4.0/bin/jmeter'
 # Plugins ~/.oh-my-zsh/plugins/*
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 ####################################
-plugins=(git brew npm tmux vi-mode)
+plugins=(git brew npm zsh-nvm tmux vi-mode)
 source $ZSH/oh-my-zsh.sh
 
 ####################################
