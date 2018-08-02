@@ -4,7 +4,7 @@ ZSH_DISABLE_COMPFIX=true
 ####################################
 # oh-my-zsh setup
 ####################################
-export ZSH=/Users/raleighwayland/.oh-my-zsh
+export ZSH=/Users/$(whoami)/.oh-my-zsh
 
 ####################################
 # Designate neovim as default editor
