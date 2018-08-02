@@ -32,6 +32,11 @@
                 "path": "vim/nvimrc",
                 "relink": true
             },
+            "~/.tmux/plugins/tpm": {
+                "create": true,
+                "path": "tmux/tpm",
+                "relink": true
+            },
             "~/.tmux.conf": {
                 "path": "tmux.conf",
                 "relink": true
