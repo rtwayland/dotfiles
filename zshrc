@@ -83,12 +83,17 @@ load-nvmrc
 # Set a fast timeout.
 # Remap esc
 # Customize cursor shape.
+# https://github.com/jcorbin/home/blob/master/.zsh/rc.d/vi-mode-cursor
+# http://pawelgoscicki.com/archives/2012/09/vi-mode-indicator-in-zsh-prompt
+# https://superuser.com/questions/151803/how-do-i-customize-zshs-vim-mode
+# https://github.com/robbyrussell/oh-my-zsh/blob/master/themes/avit.zsh-theme
 ####################################
 bindkey -v
 export KEYTIMEOUT=10
 bindkey -M viins 'kj' vi-cmd-mode
+vi_ins_mode="%{$fg[blue]%}[ I ]%{$reset_color%}"
+vi_cmd_mode="%{$fg[green]%}[ N ]%{$reset_color%}"
 # Change cursor shape depending on insert/command mode for vi-mode
-# https://github.com/jcorbin/home/blob/master/.zsh/rc.d/vi-mode-cursor
 function print_dcs
 {
   print -n -- "\EP$1;\E$2\E\\"
@@ -107,6 +112,11 @@ function set_cursor_shape
 
 function zle-keymap-select zle-line-init
 {
+  vi_mode="${${KEYMAP/vicmd/${vi_cmd_mode}}/(main|viins)/${vi_ins_mode}}"
+  PROMPT='
+$(_user_host)${_current_dir} $(git_prompt_info) $(_ruby_version) $vi_mode
+%{$fg[$CARETCOLOR]%}▶%{$resetcolor%} '
+
   # change cursor shape in iTerm2
   case $KEYMAP in
     vicmd)      set_cursor_shape 0;; # block cursor
