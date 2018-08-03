@@ -36,11 +36,12 @@ Plugin 'honza/vim-snippets'
 " Utils
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'justinmk/vim-sneak'
+Plugin 'justinmk/vim-dirvish'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-sleuth'
-Plugin 'justinmk/vim-dirvish'
+Plugin 'tpope/vim-obsession'
 Plugin 'tpope/vim-unimpaired'
 Plugin 'tpope/vim-repeat'
 Plugin 'ervandew/supertab'
@@ -53,8 +54,6 @@ Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'takac/vim-hardtime'
 Plugin 'mileszs/ack.vim'
 Plugin 'jbranchaud/vim-bdubs'
-Plugin 'xolox/vim-session'
-Plugin 'xolox/vim-misc'
 
 " Themes
 Plugin 'chriskempson/base16-vim'
@@ -204,6 +203,7 @@ let g:airline#themes#base16#constant = 1
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#formatter = 'unique_tail'
 let g:airline#extensions#ale#enabled = 1
+let g:airline_section_z = airline#section#create(['%{ObsessionStatus(''$'', ''!'')}', 'windowswap', '%3p%% ', 'linenr', ':%3v '])
 " let g:airline#extensions#whitespace#enabled = 1
 
 " Ctrlp
@@ -239,7 +239,7 @@ let g:session_autosave = 'no'
 " Custom Functions
 """""""""""""""""""""""""""""""""""""
 " Open terminal in horizontal split sized to 15
-command! Term 15sp | term 
+command! Term 15sp | term
 " FormatJSON
 command! FormatJSON %!python -m json.tool
 
