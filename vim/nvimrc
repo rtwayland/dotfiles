@@ -189,6 +189,7 @@ nnoremap <leader>tb :Space2Tab<cr>
 let g:multi_cursor_select_all_word_key = '<leader>L'
 let g:UltiSnipsExpandTrigger='<leader><tab>'
 " let g:UltiSnipsJumpForwardTrigger='<tab>'
+let g:user_emmet_leader_key='<leader>m'
 nnoremap <leader>ha <Plug>GitGutterStageHunk
 nnoremap <leader>hr <Plug>GitGutterUndoHunk
 
@@ -300,6 +301,9 @@ function! SummarizeTabs()
     echohl None
   endtry
 endfunction
+
+" Automatically set rc files to json syntax
+autocmd BufNewFile,BufRead .*rc set syntax=json
 
 """""""""""""""""""""""""""""""""""""
 " Theme Alterations
