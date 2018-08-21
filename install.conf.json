@@ -1,62 +1,62 @@
 [
-    {
-        "defaults": {
-            "link": {
-                "relink": true
-            }
-        }
-    },
-    {
-        "clean": [
-            "~"
-        ]
-    },
-    {
-        "link": {
-            "~/.config/nvim/init.vim": {
-                "create": true,
-                "path": "vim/nvimrc",
-                "relink": true
-            },
-            "~/.config/nvim/UltiSnips": {
-                "create": true,
-                "path": "vim/UltiSnips",
-                "relink": true
-            },
-            "~/.vim/bundle/Vundle.vim": {
-                "create": true,
-                "path": "vim/Vundle.vim",
-                "relink": true
-            },
-            "~/.vimrc": {
-                "path": "vim/nvimrc",
-                "relink": true
-            },
-            "~/.tmux/plugins/tpm": {
-                "create": true,
-                "path": "tmux/tpm",
-                "relink": true
-            },
-            "~/.tmux.conf": {
-                "path": "tmux.conf",
-                "relink": true
-            },
-            "~/.tern.config": {
-                "path": "tern.config",
-                "relink": true
-            },
-            "~/.zshrc": {
-                "path": "zshrc",
-                "relink": true
-            }
-        }
-    },
-    {
-        "shell": [
-            [
-                "git submodule update --init --recursive",
-                "Installing submodules"
-            ]
-        ]
+  {
+    "defaults": {
+      "link": {
+        "relink": true
+      }
     }
+  },
+  {
+    "clean": ["~"]
+  },
+  {
+    "link": {
+      "~/.config/nvim/init.vim": {
+        "create": true,
+        "path": "vim/nvimrc",
+        "relink": true
+      },
+      "~/.config/nvim/UltiSnips": {
+        "create": true,
+        "path": "vim/UltiSnips",
+        "relink": true
+      },
+      "~/.vim/bundle/Vundle.vim": {
+        "create": true,
+        "path": "vim/Vundle.vim",
+        "relink": true
+      },
+      "~/.vimrc": {
+        "path": "vim/nvimrc",
+        "relink": true
+      },
+      "~/.tmux/plugins/tpm": {
+        "create": true,
+        "path": "tmux/tpm",
+        "relink": true
+      },
+      "~/.tmux.conf": {
+        "path": "tmux.conf",
+        "relink": true
+      },
+      "~/.tern.config": {
+        "path": "tern.config",
+        "relink": true
+      },
+      "~/.zshrc": {
+        "path": "zshrc",
+        "relink": true
+      },
+      "~/.nvm": {
+        "create": true,
+        "path": "nvm",
+        "relink": true
+      }
+    }
+  },
+  {
+    "shell": [
+      ["git submodule update --init --recursive", "Installing submodules"]
+    ]
+  }
 ]
