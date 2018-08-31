@@ -154,8 +154,6 @@ nnoremap <silent> ˚ <C-W>+
 nnoremap <silent> ˙ <C-W>>
 nnoremap <silent> ≠ <C-W>=
 " Toggle commands
-nnoremap <leader>n :set relativenumber!<CR>
-nnoremap <leader>ws :set list!<CR>
 nnoremap <leader>ht :HardTimeToggle<cr>
 nnoremap <leader>ch :ColorToggle<cr>
 "Search Highlight off toggle, toggled on when search is reactivated
@@ -189,7 +187,7 @@ nnoremap <leader>tb :Space2Tab<cr>
 let g:multi_cursor_select_all_word_key = '<leader>L'
 let g:UltiSnipsExpandTrigger='<leader><tab>'
 " let g:UltiSnipsJumpForwardTrigger='<tab>'
-let g:user_emmet_leader_key='<leader>m'
+let g:user_emmet_leader_key='<c-k>'
 nnoremap <leader>ha <Plug>GitGutterStageHunk
 nnoremap <leader>hr <Plug>GitGutterUndoHunk
 
