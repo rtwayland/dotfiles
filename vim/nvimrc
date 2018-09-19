@@ -124,7 +124,6 @@ endif
 let mapleader = ' '
 " Saving and quiting
 nnoremap <leader>w :w<cr>
-nnoremap <leader>wq :w<cr>:q<cr>
 nnoremap <leader>q :q<cr>
 nnoremap <leader>qf :q!<cr>
 " Sourcing
