@@ -125,11 +125,10 @@ let mapleader = ' '
 " Saving and quiting
 nnoremap <leader>w :w<cr>
 nnoremap <leader>q :q<cr>
-nnoremap <leader>qf :q!<cr>
 " Sourcing
 nnoremap <leader>sv :source $MYVIMRC<cr>
 nnoremap <leader>so :w<cr> :source $MYVIMRC<cr>
-nnoremap <leader>sup :w<cr> :source $MYVIMRC<cr> :PluginInstall<cr>
+nnoremap <leader>spi :w<cr> :source $MYVIMRC<cr> :PluginInstall<cr>
 " Plugin Manager commands
 nnoremap <leader>pi :PluginInstall<cr>
 nnoremap <leader>pc :PluginClean<cr>
@@ -137,6 +136,7 @@ nnoremap <leader>pu :PluginUpdate<cr>
 " Quick  edit
 nnoremap <leader>vs :vsplit<space>
 nnoremap <leader>hs :split<space>
+nnoremap <leader>tn :tabnew<space>
 nnoremap <leader>ev :vsplit $MYVIMRC<cr>
 " Convenience
 inoremap kj <esc>
@@ -147,7 +147,7 @@ nnoremap <leader>; ^vg_
 nnoremap <cr> za
 " Disabled
 inoremap <esc> <nop>
-" Window resizing. Alt + ljkh= (small h & v, large v & h, = size)
+" Window resizing. Alt + ljkh=
 nnoremap <silent> ¬ <C-W><
 nnoremap <silent> ∆ <C-W>-
 nnoremap <silent> ˚ <C-W>+
@@ -157,7 +157,7 @@ nnoremap <silent> ≠ <C-W>=
 nnoremap <leader>ht :HardTimeToggle<cr>
 nnoremap <leader>ch :ColorToggle<cr>
 "Search Highlight off toggle, toggled on when search is reactivated
-nnoremap <leader>h :noh<CR>
+nnoremap <leader>yh :noh<CR>
 " Utility commands
 nnoremap <leader>f :ALEFix<CR>
 nnoremap [l :ALEPrevious<CR>
@@ -183,13 +183,15 @@ nnoremap ƒ :Ack!<space>
 " Space and Tab Conversion
 nnoremap <leader>sp :Tab2Space<cr>
 nnoremap <leader>tb :Space2Tab<cr>
+" Copy to clipboard
+vnoremap <leader>c "*y
+" Past last yank
+nnoremap <leader>py "0p
 " Plugin overrides
 let g:multi_cursor_select_all_word_key = '<leader>L'
 let g:UltiSnipsExpandTrigger='<leader><tab>'
 " let g:UltiSnipsJumpForwardTrigger='<tab>'
 let g:user_emmet_leader_key='<c-s>'
-nnoremap <leader>ha <Plug>GitGutterStageHunk
-nnoremap <leader>hr <Plug>GitGutterUndoHunk
 
 """""""""""""""""""""""""""""""""""""
 " Plugin Config
@@ -220,7 +222,7 @@ let g:user_emmet_settings = {
   \}
 
 " Ale
-let g:ale_fixers = { 'javascript': ['prettier'], 'json': ['prettier'], 'css': ['prettier'], 'html': ['prettier'] }
+let g:ale_fixers = { 'javascript': ['prettier', 'eslint'], 'json': ['prettier'], 'css': ['prettier'], 'html': ['tidy'] }
 let g:ale_javascript_prettier_use_local_config = 1
 
 " Vim Indent Guides
