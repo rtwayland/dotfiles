@@ -19,7 +19,7 @@ ZSH_THEME="avit"
 ####################################
 # Aliases
 ####################################
-alias szsh='. ~/.zshrc'
+alias sz='. ~/.zshrc'
 alias stmux='tmux source-file ~/.tmux.conf'
 alias tat='tmux a -t'
 alias tsave='tmux new -s'
@@ -28,6 +28,7 @@ alias gw='gulp -f && gulp watch -r'
 alias gs='gulp start'
 alias v='nvim'
 alias vmod='git ls-files -o -m --exclude-standard | xargs nvim'
+alias workspace='cd ~/Workspace'
 alias redx='cd ~/Workspace/redx'
 alias vortex='cd ~/Workspace/redx/vortex/vortex-app'
 alias sphere='cd ~/Workspace/redx/soi/client'

@@ -124,6 +124,7 @@ endif
 let mapleader = ' '
 " Saving and quiting
 nnoremap <leader>w :w<cr>
+vnoremap <leader>w <esc>:w<cr>
 nnoremap <leader>q :q<cr>
 " Sourcing
 nnoremap <leader>sv :source $MYVIMRC<cr>
@@ -143,6 +144,8 @@ inoremap kj <esc>
 tnoremap <esc> <C-\><C-n>
 nnoremap <leader>tm :Term<cr>
 nnoremap <leader>; ^vg_
+nnoremap K a<cr><esc>k$
+
 " Folding
 nnoremap <cr> za
 " Disabled
@@ -185,13 +188,18 @@ nnoremap <leader>sp :Tab2Space<cr>
 nnoremap <leader>tb :Space2Tab<cr>
 " Copy to clipboard
 vnoremap <leader>c "*y
-" Past last yank
+" Paste last yank
 nnoremap <leader>py "0p
+vnoremap <leader>py "0p
+" Select All
+nnoremap <leader>va ggVG<cr>
 " Plugin overrides
+" let g:ycm_key_list_select_completion = ['<Down>']
+" let g:ycm_key_list_previous_completion = ['<Up>']
 let g:multi_cursor_select_all_word_key = '<leader>L'
 let g:UltiSnipsExpandTrigger='<leader><tab>'
 " let g:UltiSnipsJumpForwardTrigger='<tab>'
-let g:user_emmet_leader_key='<c-s>'
+" let g:user_emmet_leader_key='<tab>'
 
 """""""""""""""""""""""""""""""""""""
 " Plugin Config
@@ -243,6 +251,8 @@ let g:session_autosave = 'no'
 command! Term 15sp | term
 " FormatJSON
 command! FormatJSON %!python -m json.tool
+" Format HTML
+command! Thtml set ft=html | execute "%!tidy -q -i -html"
 
 " Convert tabs to spaces and spaces to tabs (http://vim.wikia.com/wiki/Super_retab)
 " Return indent (all whitespace at start of a line), converted from
