@@ -17,6 +17,9 @@ Plugin 'VundleVim/Vundle.vim'
 """""""""""""""""""""""""""""""""""""
 " Plugins
 """""""""""""""""""""""""""""""""""""
+" Swap Files
+Plugin 'chrisbra/recover.vim'
+
 " Syntax
 Plugin 'othree/yajs.vim'
 Plugin 'mxw/vim-jsx'
