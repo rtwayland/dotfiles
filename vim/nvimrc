@@ -27,6 +27,7 @@ Plugin 'elzr/vim-json'
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'iloginow/vim-stylus'
 Plugin 'digitaltoad/vim-pug'
+Plugin 'othree/html5.vim'
 
 " Formatting and Linting
 Plugin 'editorconfig/editorconfig-vim'
@@ -54,7 +55,6 @@ Plugin 'Raimondi/delimitMate'
 Plugin 'tomtom/tcomment_vim'
 Plugin 'skwp/greplace.vim'
 Plugin 'christoomey/vim-tmux-navigator'
-Plugin 'takac/vim-hardtime'
 Plugin 'mileszs/ack.vim'
 Plugin 'jbranchaud/vim-bdubs'
 
@@ -151,8 +151,7 @@ nnoremap K a<cr><esc>k$
 
 " Folding
 nnoremap <cr> za
-" Disabled
-inoremap <esc> <nop>
+
 " Window resizing. Alt + ljkh=
 nnoremap <silent> ¬ <C-W><
 nnoremap <silent> ∆ <C-W>-
@@ -160,11 +159,12 @@ nnoremap <silent> ˚ <C-W>+
 nnoremap <silent> ˙ <C-W>>
 nnoremap <silent> ≠ <C-W>=
 " Toggle commands
-nnoremap <leader>ht :HardTimeToggle<cr>
 nnoremap <leader>ch :ColorToggle<cr>
 "Search Highlight off toggle, toggled on when search is reactivated
 nnoremap <leader>yh :noh<CR>
 " Utility commands
+nnoremap <leader>ht :TidyHtml<CR>
+nnoremap <leader>js :FormatJSON<CR>
 nnoremap <leader>f :ALEFix<CR>
 nnoremap [l :ALEPrevious<CR>
 nnoremap ]l :ALENext<CR>
@@ -242,7 +242,6 @@ let g:indent_guides_enable_on_vim_startup = 1
 " Hard Time
 let g:list_of_normal_keys = ["h", "j", "k", "l", "+", "<UP>", "<DOWN>", "<LEFT>", "<RIGHT>"]
 let g:list_of_visual_keys = ["h", "j", "k", "l", "+", "<UP>", "<DOWN>", "<LEFT>", "<RIGHT>"]
-let g:hardtime_allow_different_key = 1
 
 " Vim Session
 let g:session_autosave = 'no'
@@ -255,7 +254,7 @@ command! Term 15sp | term
 " FormatJSON
 command! FormatJSON %!python -m json.tool
 " Format HTML
-command! Thtml set ft=html | execute "%!tidy -q -i -html"
+command! TidyHtml set ft=html | execute "%!tidy -qmi -wrap 0 --show-body-only yes --show-errors 0 --show-warnings 0 --show-info no --tidy-mark no"
 
 " Convert tabs to spaces and spaces to tabs (http://vim.wikia.com/wiki/Super_retab)
 " Return indent (all whitespace at start of a line), converted from
