@@ -255,8 +255,9 @@ let g:session_autosave = 'no'
 """""""""""""""""""""""""""""""""""""
 " Open terminal in horizontal split sized to 15
 command! Term 15sp | term
+command! DTrail :%s/\s\+$
 " FormatJSON
-command! FormatJSON %!python -m json.tool
+command! FormatJSON %!python -c "import json, sys, collections; print json.dumps(json.load(sys.stdin, object_pairs_hook=collections.OrderedDict), indent=2)"
 " Format HTML
 command! TidyHtml set ft=html | execute "%!tidy -qmi -wrap 0 --show-body-only yes --show-errors 0 --show-warnings 0 --show-info no --tidy-mark no"
 
