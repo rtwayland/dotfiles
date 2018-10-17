@@ -146,6 +146,10 @@ import { connect } from 'react-redux'
 endsnippet
 
 snippet log "Console Log"
+console.log($1)
+endsnippet
+
+snippet blog "Block Console Log"
 console.log('====================================')
 console.log($1)
 console.log('====================================')
@@ -247,3 +251,6 @@ endsnippet
 
 # End EQuimper snippets
 
+snippet preq "Package require statement"
+const $1 = require('${2:$1}')
+endsnippet

@@ -20,6 +20,9 @@ Plugin 'VundleVim/Vundle.vim'
 " Swap Files
 Plugin 'chrisbra/recover.vim'
 
+" Time Tracking
+Plugin 'wakatime/vim-wakatime.git'
+
 " Syntax
 Plugin 'othree/yajs.vim'
 Plugin 'mxw/vim-jsx'
@@ -142,6 +145,7 @@ nnoremap <leader>vs :vsplit<space>
 nnoremap <leader>hs :split<space>
 nnoremap <leader>tn :tabnew<space>
 nnoremap <leader>ev :vsplit $MYVIMRC<cr>
+nnoremap <leader>sn :vsplit ~/.dotfiles/vim/UltiSnips/javascript.snippets<cr>
 " Convenience
 inoremap kj <esc>
 tnoremap <esc> <C-\><C-n>
