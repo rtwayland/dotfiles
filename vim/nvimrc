@@ -88,6 +88,7 @@ syntax on
 " Editor Config
 """""""""""""""""""""""""""""""""""""
 set hidden
+set directory^=$HOME/.vim/tmp//
 set conceallevel=0
 set wildignore+=**/node_modules/**
 set inccommand=nosplit
@@ -167,8 +168,8 @@ nnoremap <leader>ch :ColorToggle<cr>
 "Search Highlight off toggle, toggled on when search is reactivated
 nnoremap <leader>yh :noh<CR>
 " Utility commands
-nnoremap <leader>ht :TidyHtml<CR>
-nnoremap <leader>js :FormatJSON<CR>
+nnoremap <leader>ht :TidyHtml<CR>``
+nnoremap <silent> <leader>js :FormatJSON<CR>``<esc>:DTrail<CR>
 nnoremap <leader>f :ALEFix<CR>
 nnoremap [l :ALEPrevious<CR>
 nnoremap ]l :ALENext<CR>
@@ -199,7 +200,7 @@ vnoremap <leader>c "*y
 nnoremap <leader>py "0p
 vnoremap <leader>py "0p
 " Select All
-nnoremap <leader>va ggVG<cr>
+nnoremap <leader>, ggVG
 " Plugin overrides
 " let g:ycm_key_list_select_completion = ['<Down>']
 " let g:ycm_key_list_previous_completion = ['<Up>']
@@ -239,6 +240,8 @@ let g:user_emmet_settings = {
 " Ale
 let g:ale_fixers = { 'javascript': ['prettier', 'eslint'], 'json': ['prettier'], 'css': ['prettier'], 'html': ['tidy'] }
 let g:ale_javascript_prettier_use_local_config = 1
+let g:ale_html_tidy_options = '-qmi -wrap 0 --show-body-only yes --show-errors 0 --show-warnings 0 --show-info no --tidy-mark no'
+let g:ale_pattern_options = {'rc$': {'ale_linters': ['eslint'], 'ale_fixers': ['prettier']}}
 
 " Vim Indent Guides
 let g:indent_guides_enable_on_vim_startup = 1
