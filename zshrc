@@ -43,6 +43,9 @@ alias gapply='git stash apply'
 alias pg_dump='/Applications/Postgres.app/Contents/Versions/10/bin/pg_dump'
 alias jmeter='/Applications/apache-jmeter-4.0/bin/jmeter'
 
+alias dev='ssh raleigh@devstorm'
+alias keys='ssh-add && ssh-agent'
+
 ####################################
 # Plugins ~/.oh-my-zsh/plugins/*
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
