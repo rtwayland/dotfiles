@@ -44,7 +44,7 @@
         "relink": true
       },
       "~/.zshrc": {
-        "path": "zshrc",
+        "path": ".zshrc",
         "relink": true
       },
       "~/.nvm": {
