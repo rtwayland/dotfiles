@@ -43,8 +43,14 @@ alias gapply='git stash apply'
 alias pg_dump='/Applications/Postgres.app/Contents/Versions/10/bin/pg_dump'
 alias jmeter='/Applications/apache-jmeter-4.0/bin/jmeter'
 
+# Storm Dev Aliases
 alias dev='ssh raleigh@devstorm'
 alias keys='ssh-add && ssh-agent'
+alias mdev='sshfs raleigh@devstorm:/usr/local/storm ~/Workspace/storm/storm-vm'
+alias umdev='sudo umount -f ~/Workspace/storm/storm-vm'
+alias es='code ~/Workspace/storm/storm-vm/src'
+alias ea='code ~/Workspace/storm/storm-vm/admin'
+alias hosts='sudo nvim /etc/hosts'
 
 ####################################
 # Plugins ~/.oh-my-zsh/plugins/*
