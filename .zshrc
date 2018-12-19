@@ -19,30 +19,37 @@ ZSH_THEME="avit"
 ####################################
 # Aliases
 ####################################
+# Sourcing
 alias sz='. ~/.zshrc'
+# Tmux
 alias stmux='tmux source-file ~/.tmux.conf'
 alias tat='tmux a -t'
 alias tsave='tmux new -s'
 alias tkill='tmux kill-session -t'
+# Gulp
 alias gw='gulp -f && gulp watch -r'
 alias gs='gulp start'
+# Vim
 alias v='nvim'
 alias vmod='git ls-files -o -m --exclude-standard | xargs nvim'
 alias vdiff='git diff --name-only master | xargs nvim'
+# Package Management
+alias yarnup='yarn upgrade-interactive --latest'
+# Directories
 alias workspace='cd ~/Workspace'
 alias redx='cd ~/Workspace/redx'
+alias storm='cd ~/Workspace/storm'
 alias vortex='cd ~/Workspace/redx/vortex/vortex-app'
 alias sphere='cd ~/Workspace/redx/soi/client'
-
+# Git
 alias pull='git pull'
 alias push='git push'
 alias gdel='git branch -D'
 alias stash='git stash'
 alias gapply='git stash apply'
-
+# Misc
 alias pg_dump='/Applications/Postgres.app/Contents/Versions/10/bin/pg_dump'
 alias jmeter='/Applications/apache-jmeter-4.0/bin/jmeter'
-
 # Storm Dev Aliases
 alias dev='ssh raleigh@devstorm'
 alias keys='ssh-add && ssh-agent'
