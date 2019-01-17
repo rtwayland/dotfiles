@@ -42,8 +42,6 @@ alias storm='cd ~/Workspace/storm'
 alias vortex='cd ~/Workspace/redx/vortex/vortex-app'
 alias sphere='cd ~/Workspace/redx/soi/client'
 # Git
-alias pull='git pull'
-alias push='git push'
 alias gdel='git branch -D'
 alias stash='git stash'
 alias gapply='git stash apply'
