@@ -56,12 +56,32 @@ alias umdev='sudo umount -f ~/Workspace/storm/storm-vm'
 alias es='code ~/Workspace/storm/storm-vm/src'
 alias ea='code ~/Workspace/storm/storm-vm/admin'
 alias hosts='sudo nvim /etc/hosts'
+# Aliases from Storm .bashrc
+alias x='exit'
+alias s='cd /usr/local/storm/src'
+alias d='cd /usr/local/storm/devops'
+alias mks='/usr/local/storm/devops/build; inst'
+alias mkt='/usr/local/storm/devops/build --telecom; inst'
+alias mku='/usr/local/storm/devops/build --ui; inst'
+alias inst='/usr/local/storm/devops/install -d'
+alias rns='/usr/local/storm/devops/all -d'
+alias db='sudo -u postgres psql storm'
+alias pretty='npm run pretty'
+alias lint='npm run lint'
+alias revise='npm run revise'
+alias logs='sudo -HE -u root bash -c "pm2 logs"'
+alias list='sudo -HE -u root bash -c "pm2 list"'
+alias pm2start='sudo -HE -u root bash -c "pm2 delete all" && sudo -HE -u root bash -c "pm2 start /usr/local/storm/src/devops/pm2/pm2-dev.json"'
+alias pm2restart='sudo -HE -u root bash -c "pm2 restart all"'
+alias fs='PASSWD=$(sed '"'"'/socket-pass/!d; s#^.*=\(.*\)$#\1#'"'"' /etc/storm/config.ini) && fs_cli -p "$PASSWD"'
+alias pull='git pull --rebase origin `git rev-parse --abbrev-ref HEAD`'
+alias push='git push origin `git rev-parse --abbrev-ref HEAD`'
 
 ####################################
 # Plugins ~/.oh-my-zsh/plugins/*
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 ####################################
-plugins=(git npm zsh-nvm tmux vi-mode)
+plugins=(git npm zsh-nvm vi-mode)
 source $ZSH/oh-my-zsh.sh
 
 
@@ -123,10 +143,37 @@ zle -N zle-line-init
 zle -N zle-line-finish
 zle -N zle-keymap-select
 
-####################################
-# Directory completion with Z
-####################################
-. `brew --prefix`/etc/profile.d/z.sh
+# STORM .bashrc CONFIG
+
+# make less more friendly for non-text input files, see lesspipe(1)
+[ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
+
+# set variable identifying the chroot you work in (used in the prompt below)
+if [ -z "${debian_chroot:-}" ] && [ -r /etc/debian_chroot ]; then
+    debian_chroot=$(cat /etc/debian_chroot)
+fi
+
+# enable color support of ls and also add handy aliases
+if [ -x /usr/bin/dircolors ]; then
+    test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
+    alias ls='ls --color=auto'
+    #alias dir='dir --color=auto'
+    #alias vdir='vdir --color=auto'
+
+    alias grep='grep --color=auto'
+    alias fgrep='fgrep --color=auto'
+    alias egrep='egrep --color=auto'
+fi
+
+# some more ls aliases
+alias ll='ls -alF'
+alias la='ls -A'
+
+# Add an "alert" alias for long running commands.  Use like so:
+#   sleep 10; alert
+alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
+
+# END STORM .bashrc CONFIG
 
 ####################################
 # Yarn config...
