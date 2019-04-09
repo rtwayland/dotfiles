@@ -53,7 +53,7 @@ Plugin 'tpope/vim-unimpaired'
 Plugin 'tpope/vim-repeat'
 Plugin 'ervandew/supertab'
 Plugin 'SirVer/ultisnips'
-Plugin 'valloric/youcompleteme'
+" Plugin 'valloric/youcompleteme'
 Plugin 'Raimondi/delimitMate'
 Plugin 'tomtom/tcomment_vim'
 Plugin 'skwp/greplace.vim'
@@ -69,7 +69,6 @@ Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'chrisbra/Colorizer'
 Plugin 'airblade/vim-gitgutter'
-Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'machakann/vim-highlightedyank'
 Plugin 'kshenoy/vim-signature'
 Plugin 'ryanoasis/vim-devicons'
@@ -116,6 +115,7 @@ set wrap
 " Tabs
 set ts=2 sts=2 sw=2 expandtab
 " Whitespaces
+set list
 set listchars=tab:→\ ,space:·,eol:¬
 " Backspace Fix for Vim
 set backspace=2
@@ -155,7 +155,7 @@ nnoremap <leader>; ^vg_
 nnoremap K a<cr><esc>k$
 
 " Folding
-nnoremap <cr> za
+" nnoremap <cr> za
 
 " Window resizing. Alt + ljkh=
 nnoremap <silent> ¬ <C-W><
@@ -243,9 +243,6 @@ let g:ale_javascript_prettier_use_local_config = 1
 let g:ale_html_tidy_options = '-qmi -wrap 0 --show-body-only yes --show-errors 0 --show-warnings 0 --show-info no --tidy-mark no'
 let g:ale_pattern_options = {'rc$': {'ale_linters': ['eslint'], 'ale_fixers': ['prettier']}}
 
-" Vim Indent Guides
-let g:indent_guides_enable_on_vim_startup = 1
-
 " Hard Time
 let g:list_of_normal_keys = ["h", "j", "k", "l", "+", "<UP>", "<DOWN>", "<LEFT>", "<RIGHT>"]
 let g:list_of_visual_keys = ["h", "j", "k", "l", "+", "<UP>", "<DOWN>", "<LEFT>", "<RIGHT>"]
@@ -328,8 +325,6 @@ autocmd BufNewFile,BufRead .*rc set syntax=json
 """""""""""""""""""""""""""""""""""""
 " Theme Alterations
 """""""""""""""""""""""""""""""""""""
-" hi IndentGuidesOdd  ctermbg=237 guibg=#3a3a3a
-" hi IndentGuidesEven ctermbg=236 guibg=#1c1c1c
 hi HighlightedyankRegion cterm=reverse gui=reverse
 hi SignColumn ctermbg=235 guibg=#2d2d2d
 hi LineNr ctermbg=235 guibg=#2d2d2d
