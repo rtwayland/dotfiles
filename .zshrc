@@ -81,7 +81,7 @@ alias push='git push origin `git rev-parse --abbrev-ref HEAD`'
 # Plugins ~/.oh-my-zsh/plugins/*
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 ####################################
-plugins=(git npm zsh-nvm vi-mode)
+plugins=(git npm vi-mode)
 source $ZSH/oh-my-zsh.sh
 
 
