@@ -58,6 +58,7 @@ alias ea='code ~/Workspace/storm/storm-vm/admin'
 alias hosts='sudo nvim /etc/hosts'
 # Aliases from Storm .bashrc
 alias x='exit'
+alias a='cd /usr/local/storm/admin'
 alias s='cd /usr/local/storm/src'
 alias d='cd /usr/local/storm/devops'
 alias mks='/usr/local/storm/devops/build; inst'
