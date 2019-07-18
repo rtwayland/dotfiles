@@ -40,10 +40,7 @@ alias vdiff='git diff --name-only master | xargs nvim'
 alias yarnup='yarn upgrade-interactive --latest'
 # Directories
 alias workspace='cd ~/Workspace'
-alias redx='cd ~/Workspace/redx'
 alias storm='cd ~/Workspace/storm'
-alias vortex='cd ~/Workspace/redx/vortex/vortex-app'
-alias sphere='cd ~/Workspace/redx/soi/client'
 # Git
 alias pull='git pull'
 alias push='git push'
