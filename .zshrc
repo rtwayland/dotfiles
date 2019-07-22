@@ -41,6 +41,7 @@ alias yarnup='yarn upgrade-interactive --latest'
 # Directories
 alias workspace='cd ~/Workspace'
 alias storm='cd ~/Workspace/storm'
+alias qmk='cd ~/Workspace/personal/qmk_firmware'
 # Git
 alias pull='git pull'
 alias push='git push'
@@ -48,8 +49,7 @@ alias gdel='git branch -D'
 alias stash='git stash'
 alias gapply='git stash apply'
 # Misc
-alias pg_dump='/Applications/Postgres.app/Contents/Versions/10/bin/pg_dump'
-alias jmeter='/Applications/apache-jmeter-4.0/bin/jmeter'
+alias corne='make crkbd:thefoxcodes:dfu'
 # Storm Dev Aliases
 alias dev='ssh raleigh@devstorm'
 alias keys='ssh-add && ssh-agent'
