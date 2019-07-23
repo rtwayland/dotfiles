@@ -50,6 +50,8 @@ alias stash='git stash'
 alias gapply='git stash apply'
 # Misc
 alias corne='make crkbd:thefoxcodes:dfu'
+alias keymap='code ~/Workspace/personal/qmk_firmware/keyboards/crkbd/keymaps/thefoxcodes/keymap.c'
+alias vkeymap='nvim ~/Workspace/personal/qmk_firmware/keyboards/crkbd/keymaps/thefoxcodes/keymap.c'
 # Storm Dev Aliases
 alias dev='ssh raleigh@devstorm'
 alias keys='ssh-add && ssh-agent'
