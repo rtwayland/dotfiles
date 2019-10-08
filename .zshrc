@@ -84,9 +84,8 @@ alias push='git push origin `git rev-parse --abbrev-ref HEAD`'
 # Plugins ~/.oh-my-zsh/plugins/*
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 ####################################
-plugins=(git npm vi-mode)
+plugins=(git npm vi-mode zsh-nvm zsh-syntax-highlighting zsh-autosuggestions)
 source $ZSH/oh-my-zsh.sh
-
 
 ####################################
 # Vi mode Config
@@ -182,9 +181,4 @@ alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo
 # Yarn config...
 ####################################
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
-
-####################################
-# Terminal syntax highlighting
-####################################
-source ~/.oh-my-zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
