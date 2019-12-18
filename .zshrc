@@ -25,6 +25,7 @@ ZSH_THEME="avit"
 # Aliases
 ####################################
 # Sourcing
+alias ez='code ~/.zshrc'
 alias sz='. ~/.zshrc'
 # Tmux
 alias stmux='tmux source-file ~/.tmux.conf'
@@ -138,6 +139,12 @@ zle -N zle-keymap-select
 # Yarn config...
 ####################################
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+
+####################################
+# Android config
+####################################
+export ANDROID_SDK=/Users/raleigh.wayland.su/Library/Android/sdk
+export PATH=/Users/raleigh.wayland.su/Library/Android/sdk/platform-tools:$PATH
 
 ####################################
 # Serverless Framework
