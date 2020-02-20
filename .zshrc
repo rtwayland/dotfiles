@@ -50,6 +50,7 @@ alias pull='git pull'
 alias push='git push'
 alias gdel='git branch -D'
 alias stash='git stash'
+alias pop='git stash pop'
 alias gapply='git stash apply'
 # Misc
 alias corne='make crkbd:thefoxcodes:dfu'
@@ -57,6 +58,10 @@ alias keymap='code ~/Workspace/personal/qmk_firmware/keyboards/crkbd/keymaps/the
 alias vkeymap='nvim ~/Workspace/personal/qmk_firmware/keyboards/crkbd/keymaps/thefoxcodes/keymap.c'
 # Storm Dev Aliases
 alias dev='ssh storm@devstorm'
+alias dev-stage1='ssh raleighw@stagestorm1.l'
+alias dev-stage2='ssh raleighw@stagestorm2.l'
+alias dev-stage3='ssh raleighw@stagestorm3.l'
+alias dev-stage-db='ssh raleighw@stagestormdbm.l'
 alias keys='ssh-add && ssh-agent'
 alias mdev='sshfs storm@devstorm:/usr/local/storm ~/Workspace/storm/storm-vm'
 alias umdev='sudo umount -f ~/Workspace/storm/storm-vm'
