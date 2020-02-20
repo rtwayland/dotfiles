@@ -14,3 +14,5 @@ git fetch && git pull
 rm ~/.zshrc && ./instal
 # iTerm2 Setup
 open https://github.com/ryanoasis/nerd-fonts/releases/download/v2.0.0/Meslo.zip
+# Directory Setup
+cd && mkdir Workspace
