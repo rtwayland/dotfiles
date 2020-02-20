@@ -9,6 +9,9 @@ git clone git://github.com/zsh-users/zsh-autosuggestions ~/.oh-my-zsh/custom/plu
 git clone git://github.com/lukechilds/zsh-nvm ~/.oh-my-zsh/custom/plugins/zsh-nvm
 brew install tmux
 brew install z
+brew install neovim
+brew install python
+pip3 install --user neovim
 # Install dotfiles
 cd && git clone https://github.com/rtwayland/dotfiles.git .dotfiles
 cd .dotfiles
