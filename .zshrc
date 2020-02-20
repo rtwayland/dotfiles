@@ -110,7 +110,7 @@ function zle-keymap-select zle-line-init
 {
   vi_mode="${${KEYMAP/vicmd/${vi_cmd_mode}}/(main|viins)/${vi_ins_mode}}"
   PROMPT='
-$(_user_host)${_current_dir} $(git_prompt_info) $(_ruby_version) $vi_mode
+$(_user_host)${_current_dir} $(git_prompt_info) $vi_mode
 %{$fg[$CARETCOLOR]%}▶%{$resetcolor%} '
 
   # change cursor shape in iTerm2
