@@ -8,9 +8,6 @@ ZSH_DISABLE_COMPFIX=true
 ####################################
 export ZSH=/Users/$(whoami)/.oh-my-zsh
 
-#PATH for rbenv (ruby)
-export PATH="$HOME/.rbenv/shims:$PATH"
-
 ####################################
 # Designate neovim as default editor
 ####################################

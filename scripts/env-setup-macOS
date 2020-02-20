@@ -6,7 +6,9 @@ chsh -s `which zsh`
 # Set up zsh syntax highlighting, autosuggestions, and nvm
 git clone git://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting 
 git clone git://github.com/zsh-users/zsh-autosuggestions ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions
-git clone git://github.com/lukechilds/zsh-nvm ~/.oh-my-zsh/custom/plugins/zsh-nv
+git clone git://github.com/lukechilds/zsh-nvm ~/.oh-my-zsh/custom/plugins/zsh-nvm
+brew install tmux
+brew install z
 # Install dotfiles
 cd && git clone https://github.com/rtwayland/dotfiles.git .dotfiles
 cd .dotfiles
