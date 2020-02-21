@@ -42,6 +42,7 @@ alias yarnup='yarn upgrade-interactive --latest'
 alias workspace='cd ~/Workspace'
 alias storm='cd ~/Workspace/storm'
 alias qmk='cd ~/Workspace/personal/qmk_firmware'
+alias rm-nm='find ./ -name "node_modules" -type d -prune -exec rm -rf "{}" +'
 # Git
 alias pull='git pull'
 alias push='git push'
