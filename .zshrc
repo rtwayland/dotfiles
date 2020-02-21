@@ -64,6 +64,7 @@ alias mdev='sshfs storm@devstorm:/usr/local/storm ~/Workspace/storm/storm-vm'
 alias umdev='sudo umount -f ~/Workspace/storm/storm-vm'
 alias mstorm='umdev && mdev'
 alias es='code ~/Workspace/storm/storm-vm/src'
+alias ef='code ~/Workspace/storm/storm-vm/src/front-end'
 alias ea='code ~/Workspace/storm/storm-vm/admin'
 alias hosts='sudo nvim /etc/hosts'
 
