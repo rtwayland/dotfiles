@@ -16,7 +16,7 @@ pip3 install --user neovim
 cd && git clone https://github.com/rtwayland/dotfiles.git .dotfiles
 cd .dotfiles
 git fetch && git pull
-rm ~/.zshrc && ./instal
+rm ~/.zshrc && ./install
 # iTerm2 Setup
 open https://github.com/ryanoasis/nerd-fonts/releases/download/v2.0.0/Meslo.zip
 # Directory Setup
