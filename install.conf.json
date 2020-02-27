@@ -51,6 +51,11 @@
         "create": true,
         "path": "nvm",
         "relink": true
+      },
+      "~/.gitconfig": {
+        "create": true,
+        "path": ".gitconfig",
+        "relink": true
       }
     }
   },
