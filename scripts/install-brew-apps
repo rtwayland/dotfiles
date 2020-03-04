@@ -10,6 +10,7 @@ brew cask install homebrew/cask-versions/hamsket-nightly
 brew cask install karabiner-elements
 brew cask install homebrew/cask-drivers/logitech-options
 brew cask install appcleaner
+brew cask install macmediakeyforwarder
 # Dev
 brew cask install iterm2
 brew cask install visual-studio-code
