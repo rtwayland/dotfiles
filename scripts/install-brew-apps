@@ -21,6 +21,7 @@ brew cask install qcad
 # Work
 brew cask install tableplus
 brew cask install vmware-fusion
+brew cask install tunnelblick
 # Entertainment
 brew cask install spotify
 brew cask install calibre
