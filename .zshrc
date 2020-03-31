@@ -43,6 +43,9 @@ alias workspace='cd ~/Workspace'
 alias storm='cd ~/Workspace/storm'
 alias qmk='cd ~/Workspace/personal/qmk_firmware'
 alias rm-nm='find ./ -name "node_modules" -type d -prune -exec rm -rf "{}" +'
+grepTerm() {
+  grep -rnw $1 -e $2
+}
 # Git
 alias pull='git pull'
 alias push='git push'
@@ -70,7 +73,7 @@ alias hosts='sudo nvim /etc/hosts'
 # Plugins ~/.oh-my-zsh/plugins/*
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 ####################################
-plugins=(git brew npm zsh-nvm tmux vi-mode zsh-syntax-highlighting zsh-autosuggestions)
+plugins=(zsh-nvm git brew npm tmux vi-mode zsh-syntax-highlighting zsh-autosuggestions sudo)
 source $ZSH/oh-my-zsh.sh
 
 ####################################
