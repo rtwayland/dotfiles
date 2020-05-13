@@ -47,11 +47,6 @@
         "path": ".zshrc",
         "relink": true
       },
-      "~/.nvm": {
-        "create": true,
-        "path": "nvm",
-        "relink": true
-      },
       "~/.gitconfig": {
         "create": true,
         "path": ".gitconfig",
