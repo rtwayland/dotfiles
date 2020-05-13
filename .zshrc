@@ -3,6 +3,7 @@
 # Path suggested by brew
 export PATH="/usr/local/sbin:$PATH"
 ZSH_DISABLE_COMPFIX=true
+
 ####################################
 # oh-my-zsh setup
 ####################################
@@ -46,6 +47,12 @@ alias rm-nm='find ./ -name "node_modules" -type d -prune -exec rm -rf "{}" +'
 grepTerm() {
   grep -rnw $1 -e $2
 }
+multicrop() {
+  ./multicrop ../raw/Scan\ $1.png $1_rotated.png
+}
+rangeLoop() {
+  for x in {$1}; do $2 $x; done
+}
 # Git
 alias pull='git pull'
 alias push='git push'
@@ -53,6 +60,7 @@ alias gdel='git branch -D'
 alias stash='git stash'
 alias pop='git stash pop'
 alias gapply='git stash apply'
+alias undo-commit='git reset --soft HEAD~1'
 # Misc
 alias opus='make opus:thefoxcodes:avrdude'
 alias keymap='code ~/Workspace/personal/qmk_firmware/keyboards/opus/keymaps/thefoxcodes/keymap.c'
