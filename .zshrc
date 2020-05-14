@@ -62,9 +62,10 @@ alias pop='git stash pop'
 alias gapply='git stash apply'
 alias undo-commit='git reset --soft HEAD~1'
 # Misc
-alias opus='make opus:thefoxcodes:avrdude'
-alias keymap='code ~/Workspace/personal/qmk_firmware/keyboards/opus/keymaps/thefoxcodes/keymap.c'
-alias vkeymap='nvim ~/Workspace/personal/qmk_firmware/keyboards/opus/keymaps/thefoxcodes/keymap.c'
+# alias opus='make opus:thefoxcodes:avrdude'
+alias opus='qmk flash'
+alias keymap='code ~/qmk_firmware/keyboards/opus/keymaps/thefoxcodes/keymap.c'
+alias vkeymap='nvim ~/qmk_firmware/keyboards/opus/keymaps/thefoxcodes/keymap.c'
 # Storm Dev Aliases
 alias dev='ssh storm@devstorm'
 alias dev-stage1='ssh raleigh@stagestorm1.l'
