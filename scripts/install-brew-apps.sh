@@ -11,6 +11,7 @@ brew cask install appcleaner
 brew cask install macmediakeyforwarder
 brew cask install dropbox
 brew cask install signal
+brew cask install zoomus
 # brew cask install karabiner-elements
 # Dev
 brew cask install iterm2
@@ -19,12 +20,6 @@ brew cask install postman
 # Design
 # brew cask install autodesk-fusion360
 # brew cask install qcad
-# Work
-brew cask install tableplus
-brew cask install vmware-fusion
-brew cask install tunnelblick
-brew cask install zoomus
-brew cask install android-studio
 # Entertainment
 brew cask install spotify
 brew cask install discord
