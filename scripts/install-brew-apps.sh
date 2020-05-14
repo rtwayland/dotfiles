@@ -1,6 +1,6 @@
 # Everyday
 brew cask install google-chrome
-brew cask install firefox-developer-edition
+brew cask install homebrew/cask-versions/firefox-developer-edition
 brew cask install slack
 brew cask install nordvpn
 # Productivity
