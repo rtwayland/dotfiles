@@ -42,7 +42,6 @@ alias yarnup='yarn upgrade-interactive --latest'
 # Directories
 alias workspace='cd ~/Workspace'
 alias storm='cd ~/Workspace/storm'
-alias qmk='cd ~/Workspace/personal/qmk_firmware'
 alias rm-nm='find ./ -name "node_modules" -type d -prune -exec rm -rf "{}" +'
 grepTerm() {
   grep -rnw $1 -e $2
@@ -63,6 +62,7 @@ alias gapply='git stash apply'
 alias undo-commit='git reset --soft HEAD~1'
 # Misc
 # alias opus='make opus:thefoxcodes:avrdude'
+alias qmk-dir='cd ~/qmk_firmware'
 alias opus='qmk flash'
 alias keymap='code ~/qmk_firmware/keyboards/opus/keymaps/thefoxcodes/keymap.c'
 alias vkeymap='nvim ~/qmk_firmware/keyboards/opus/keymaps/thefoxcodes/keymap.c'
