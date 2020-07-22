@@ -47,6 +47,10 @@
         "path": ".zshrc",
         "relink": true
       },
+      "~/.p10k.zsh": {
+        "path": ".p10k.zsh",
+        "relink": true
+      },
       "~/.gitconfig": {
         "create": true,
         "path": ".gitconfig",
