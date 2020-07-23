@@ -47,9 +47,13 @@
         "path": ".zshrc",
         "relink": true
       },
-      "~/.nvm": {
+      "~/.p10k.zsh": {
+        "path": ".p10k.zsh",
+        "relink": true
+      },
+      "~/.gitconfig": {
         "create": true,
-        "path": "nvm",
+        "path": ".gitconfig",
         "relink": true
       }
     }

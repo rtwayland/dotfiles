@@ -1,6 +1,16 @@
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
+# Path suggested by brew
+export PATH="/usr/local/sbin:$PATH"
 ZSH_DISABLE_COMPFIX=true
+
 ####################################
 # oh-my-zsh setup
 ####################################
@@ -14,12 +24,14 @@ export EDITOR='nvim'
 ####################################
 # ZSH theme https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 ####################################
-ZSH_THEME="avit"
+# ZSH_THEME="avit"
+ZSH_THEME="powerlevel10k/powerlevel10k"
 
 ####################################
 # Aliases
 ####################################
 # Sourcing
+alias ez='code ~/.zshrc'
 alias sz='. ~/.zshrc'
 # Tmux
 alias stmux='tmux source-file ~/.tmux.conf'
@@ -37,23 +49,38 @@ alias vdiff='git diff --name-only master | xargs nvim'
 alias yarnup='yarn upgrade-interactive --latest'
 # Directories
 alias workspace='cd ~/Workspace'
-alias redx='cd ~/Workspace/redx'
 alias storm='cd ~/Workspace/storm'
-alias vortex='cd ~/Workspace/redx/vortex/vortex-app'
-alias sphere='cd ~/Workspace/redx/soi/client'
+alias rm-nm='find ./ -name "node_modules" -type d -prune -exec rm -rf "{}" +'
+grepTerm() {
+  grep -rnw $1 -e $2
+}
+multicrop() {
+  ./multicrop ../raw/Scan\ $1.png $1_rotated.png
+}
+rangeLoop() {
+  for x in {$1}; do $2 $x; done
+}
 # Git
 alias gdel='git branch -D'
 alias stash='git stash'
+alias pop='git stash pop'
 alias gapply='git stash apply'
+alias undo-commit='git reset --soft HEAD~1'
 # Misc
-alias pg_dump='/Applications/Postgres.app/Contents/Versions/10/bin/pg_dump'
-alias jmeter='/Applications/apache-jmeter-4.0/bin/jmeter'
+# alias opus='make opus:thefoxcodes:avrdude'
+alias qmk-dir='cd ~/qmk_firmware'
+alias opus='qmk flash'
+alias keymap='code ~/qmk_firmware/keyboards/opus/keymaps/thefoxcodes/keymap.c'
+alias vkeymap='nvim ~/qmk_firmware/keyboards/opus/keymaps/thefoxcodes/keymap.c'
 # Storm Dev Aliases
-alias dev='ssh raleigh@devstorm'
+alias dev='ssh storm@devstorm'
+alias dev-stage1='ssh raleigh@stagestorm1.l'
 alias keys='ssh-add && ssh-agent'
-alias mdev='sshfs raleigh@devstorm:/usr/local/storm ~/Workspace/storm/storm-vm'
+alias mdev='sshfs storm@devstorm:/usr/local/storm ~/Workspace/storm/storm-vm'
 alias umdev='sudo umount -f ~/Workspace/storm/storm-vm'
+alias mstorm='umdev && mdev'
 alias es='code ~/Workspace/storm/storm-vm/src'
+alias ef='code ~/Workspace/storm/storm-vm/src/front-end'
 alias ea='code ~/Workspace/storm/storm-vm/admin'
 alias hosts='sudo nvim /etc/hosts'
 # Aliases from Storm .bashrc
@@ -84,7 +111,7 @@ alias push='git push origin `git rev-parse --abbrev-ref HEAD`'
 # Plugins ~/.oh-my-zsh/plugins/*
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 ####################################
-plugins=(git npm vi-mode zsh-nvm zsh-syntax-highlighting zsh-autosuggestions)
+plugins=(git npm tmux vi-mode zsh-syntax-highlighting zsh-autosuggestions sudo)
 source $ZSH/oh-my-zsh.sh
 
 ####################################
@@ -97,53 +124,53 @@ source $ZSH/oh-my-zsh.sh
 # https://superuser.com/questions/151803/how-do-i-customize-zshs-vim-mode
 # https://github.com/robbyrussell/oh-my-zsh/blob/master/themes/avit.zsh-theme
 ####################################
-bindkey -v
-export KEYTIMEOUT=10
-bindkey -M viins 'kj' vi-cmd-mode
-vi_ins_mode="%{$fg[blue]%}[ I ]%{$reset_color%}"
-vi_cmd_mode="%{$fg[green]%}[ N ]%{$reset_color%}"
-# Change cursor shape depending on insert/command mode for vi-mode
-function print_dcs
-{
-  print -n -- "\EP$1;\E$2\E\\"
-}
+# bindkey -v
+# export KEYTIMEOUT=10
+# bindkey -M viins 'kj' vi-cmd-mode
+# vi_ins_mode="%{$fg[blue]%}[ I ]%{$reset_color%}"
+# vi_cmd_mode="%{$fg[green]%}[ N ]%{$reset_color%}"
+# # Change cursor shape depending on insert/command mode for vi-mode
+# function print_dcs
+# {
+#   print -n -- "\EP$1;\E$2\E\\"
+# }
 
-function set_cursor_shape
-{
-  if [ -n "$TMUX" ]; then
-    # tmux will only forward escape sequences to the terminal if surrounded by
-    # a DCS sequence
-    print_dcs tmux "\E]50;CursorShape=$1\C-G"
-  else
-    print -n -- "\E]50;CursorShape=$1\C-G"
-  fi
-}
+# function set_cursor_shape
+# {
+#   if [ -n "$TMUX" ]; then
+#     # tmux will only forward escape sequences to the terminal if surrounded by
+#     # a DCS sequence
+#     print_dcs tmux "\E]50;CursorShape=$1\C-G"
+#   else
+#     print -n -- "\E]50;CursorShape=$1\C-G"
+#   fi
+# }
 
-function zle-keymap-select zle-line-init
-{
-  vi_mode="${${KEYMAP/vicmd/${vi_cmd_mode}}/(main|viins)/${vi_ins_mode}}"
-  PROMPT='
-$(_user_host)${_current_dir} $(git_prompt_info) $(_ruby_version) $vi_mode
-%{$fg[$CARETCOLOR]%}▶%{$resetcolor%} '
+# function zle-keymap-select zle-line-init
+# {
+#   vi_mode="${${KEYMAP/vicmd/${vi_cmd_mode}}/(main|viins)/${vi_ins_mode}}"
+#   PROMPT='
+# $(_user_host)${_current_dir} $(git_prompt_info) $vi_mode
+# %{$fg[$CARETCOLOR]%}▶%{$resetcolor%} '
 
-  # change cursor shape in iTerm2
-  case $KEYMAP in
-    vicmd)      set_cursor_shape 0;; # block cursor
-    viins|main) set_cursor_shape 1;; # line cursor
-  esac
+#   # change cursor shape in iTerm2
+#   case $KEYMAP in
+#     vicmd)      set_cursor_shape 0;; # block cursor
+#     viins|main) set_cursor_shape 1;; # line cursor
+#   esac
 
-  zle reset-prompt
-  zle -R
-}
+#   zle reset-prompt
+#   zle -R
+# }
 
-function zle-line-finish
-{
-  set_cursor_shape 0 # block cursor
-}
+# function zle-line-finish
+# {
+#   set_cursor_shape 0 # block cursor
+# }
 
-zle -N zle-line-init
-zle -N zle-line-finish
-zle -N zle-keymap-select
+# zle -N zle-line-init
+# zle -N zle-line-finish
+# zle -N zle-keymap-select
 
 # STORM .bashrc CONFIG
 
@@ -182,3 +209,5 @@ alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo
 ####################################
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
