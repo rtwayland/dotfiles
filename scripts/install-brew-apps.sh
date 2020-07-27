@@ -12,6 +12,7 @@ brew cask install macmediakeyforwarder
 brew cask install dropbox
 brew cask install signal
 brew cask install zoomus
+brew cask install notion
 # brew cask install karabiner-elements
 # Dev
 brew cask install iterm2
