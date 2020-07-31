@@ -83,6 +83,8 @@ alias es='code ~/Workspace/storm/storm-vm/src'
 alias ef='code ~/Workspace/storm/storm-vm/src/front-end'
 alias ea='code ~/Workspace/storm/storm-vm/admin'
 alias hosts='sudo nvim /etc/hosts'
+alias rm_n_m_install='sudo rm -rf node_modules && npm i && start-d'
+alias rm_storm-ui_install='sudo rm -rf node_modules/storm-ui && npm i && start-d'
 # Aliases from Storm .bashrc
 alias x='exit'
 alias a='cd /usr/local/storm/admin'
@@ -111,7 +113,7 @@ alias push='git push origin `git rev-parse --abbrev-ref HEAD`'
 # Plugins ~/.oh-my-zsh/plugins/*
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 ####################################
-plugins=(git npm tmux vi-mode zsh-syntax-highlighting zsh-autosuggestions sudo)
+plugins=(git npm vi-mode zsh-syntax-highlighting zsh-autosuggestions sudo)
 source $ZSH/oh-my-zsh.sh
 
 ####################################
@@ -168,6 +170,54 @@ source $ZSH/oh-my-zsh.sh
 #   set_cursor_shape 0 # block cursor
 # }
 
+# zle -N zle-line-init
+# zle -N zle-line-finish
+# zle -N zle-keymap-select
+
+# bindkey -v
+# export KEYTIMEOUT=10
+# bindkey -M viins 'kj' vi-cmd-mode
+# vi_ins_mode="%{$fg[blue]%}[ I ]%{$reset_color%}"
+# vi_cmd_mode="%{$fg[green]%}[ N ]%{$reset_color%}"
+# # Change cursor shape depending on insert/command mode for vi-mode
+# function print_dcs
+# {
+#   print -n -- "\EP$1;\E$2\E\\"
+# }
+#
+# function set_cursor_shape
+# {
+#   if [ -n "$TMUX" ]; then
+#     # tmux will only forward escape sequences to the terminal if surrounded by
+#     # a DCS sequence
+#     print_dcs tmux "\E]50;CursorShape=$1\C-G"
+#   else
+#     print -n -- "\E]50;CursorShape=$1\C-G"
+#   fi
+# }
+#
+# function zle-keymap-select zle-line-init
+# {
+#   vi_mode="${${KEYMAP/vicmd/${vi_cmd_mode}}/(main|viins)/${vi_ins_mode}}"
+#   PROMPT='
+# $(_user_host)${_current_dir} $(git_prompt_info) $vi_mode
+# %{$fg[$CARETCOLOR]%}▶%{$resetcolor%} '
+#
+#   # change cursor shape in iTerm2
+#   case $KEYMAP in
+#     vicmd)      set_cursor_shape 0;; # block cursor
+#     viins|main) set_cursor_shape 1;; # line cursor
+#   esac
+#
+#   zle reset-prompt
+#   zle -R
+# }
+#
+# function zle-line-finish
+# {
+#   set_cursor_shape 0 # block cursor
+# }
+#
 # zle -N zle-line-init
 # zle -N zle-line-finish
 # zle -N zle-keymap-select
