@@ -1,0 +1,65 @@
+[
+	{
+		"name": "storm-mobile",
+		"rootPath": "/Users/raleigh.wayland/Workspace/storm/storm-mobile",
+		"paths": [],
+		"group": "",
+		"enabled": true
+	},
+	{
+		"name": "storm-extension",
+		"rootPath": "/Users/raleigh.wayland/Workspace/storm/storm-extension",
+		"paths": [],
+		"group": "",
+		"enabled": true
+	},
+	{
+		"name": "storm-front-end",
+		"rootPath": "/Users/raleigh.wayland/Workspace/storm/storm-vm/src/front-end",
+		"paths": [],
+		"group": "",
+		"enabled": true
+	},
+	{
+		"name": "storm-src",
+		"rootPath": "/Users/raleigh.wayland/Workspace/storm/storm-vm/src",
+		"paths": [],
+		"group": "",
+		"enabled": true
+	},
+	{
+		"name": "storm-admin",
+		"rootPath": "/Users/raleigh.wayland/Workspace/storm/storm-vm/admin",
+		"paths": [],
+		"group": "",
+		"enabled": true
+	},
+	{
+		"name": "storm-ui",
+		"rootPath": "/Users/raleigh.wayland/Workspace/storm/storm-ui",
+		"paths": [],
+		"group": "",
+		"enabled": true
+	},
+	{
+		"name": "dotfiles",
+		"rootPath": "/Users/raleigh.wayland/.dotfiles",
+		"paths": [],
+		"group": "",
+		"enabled": true
+	},
+	{
+		"name": "storm-docs-v2",
+		"rootPath": "/Users/raleigh.wayland/Workspace/storm/storm-docs-v2",
+		"paths": [],
+		"group": "",
+		"enabled": true
+	},
+	{
+		"name": "browser-synth",
+		"rootPath": "/Users/raleigh.wayland/Workspace/personal/browser-synth",
+		"paths": [],
+		"group": "",
+		"enabled": true
+	}
+]
