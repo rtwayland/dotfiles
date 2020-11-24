@@ -55,6 +55,11 @@
         "create": true,
         "path": ".gitconfig",
         "relink": true
+      },
+      "~/.config/karabiner/assets/complex_modifications/": {
+        "create": true,
+        "path": "complex_modifications/*",
+        "relink": true
       }
     }
   },
