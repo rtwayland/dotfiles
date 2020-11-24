@@ -85,6 +85,7 @@ alias mstorm='umdev && mdev'
 alias es='code ~/Workspace/storm/storm-vm/src'
 alias ef='code ~/Workspace/storm/storm-vm/src/front-end'
 alias ea='code ~/Workspace/storm/storm-vm/admin'
+alias ew='code ~/Workspace/storm/storm-vm/wavv-package'
 alias hosts='sudo nvim /etc/hosts'
 
 ####################################
