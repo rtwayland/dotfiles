@@ -52,7 +52,7 @@ Plugin 'tpope/vim-obsession'
 Plugin 'tpope/vim-unimpaired'
 Plugin 'tpope/vim-repeat'
 Plugin 'ervandew/supertab'
-Plugin 'SirVer/ultisnips'
+" Plugin 'SirVer/ultisnips'
 " Plugin 'valloric/youcompleteme'
 Plugin 'Raimondi/delimitMate'
 Plugin 'tomtom/tcomment_vim'
@@ -146,7 +146,7 @@ nnoremap <leader>vs :vsplit<space>
 nnoremap <leader>hs :split<space>
 nnoremap <leader>tn :tabnew<space>
 nnoremap <leader>ev :vsplit $MYVIMRC<cr>
-nnoremap <leader>sn :vsplit ~/.dotfiles/vim/UltiSnips/javascript.snippets<cr>
+" nnoremap <leader>sn :vsplit ~/.dotfiles/vim/UltiSnips/javascript.snippets<cr>
 " Convenience
 inoremap kj <esc>
 tnoremap <esc> <C-\><C-n>
