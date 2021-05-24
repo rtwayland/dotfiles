@@ -82,11 +82,16 @@ alias keys='ssh-add && ssh-agent'
 alias mdev='sshfs storm@devstorm:/usr/local/storm ~/Workspace/storm/storm-vm'
 alias umdev='sudo umount -f ~/Workspace/storm/storm-vm'
 alias mstorm='umdev && mdev'
-alias es='code ~/Workspace/storm/storm-vm/src'
-alias ef='code ~/Workspace/storm/storm-vm/src/front-end'
-alias ea='code ~/Workspace/storm/storm-vm/admin'
-alias ew='code ~/Workspace/storm/storm-vm/wavv-package'
+alias s='cd ~/Workspace/storm/wavv-docker/core'
+alias f='cd ~/Workspace/storm/wavv-docker/core/front-end'
+alias a='cd ~/Workspace/storm/wavv-docker/admin'
+alias w='cd ~/Workspace/storm/wavv-docker/module'
+alias es='code ~/Workspace/storm/wavv-docker/core'
+alias ef='code ~/Workspace/storm/wavv-docker/core/front-end'
+alias ea='code ~/Workspace/storm/wavv-docker/admin'
+alias ew='code ~/Workspace/storm/wavv-docker/module'
 alias hosts='sudo nvim /etc/hosts'
+alias wavv="node /Users/raleigh.wayland/Workspace/storm/wavv-docker/cli/index.js"
 
 ####################################
 # Plugins ~/.oh-my-zsh/plugins/*

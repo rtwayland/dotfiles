@@ -396,10 +396,10 @@
 	<false/>
 	<key>NSSplitView Subview Frames NSColorPanelSplitView</key>
 	<array>
-		<string>0.000000, 0.000000, 224.000000, 258.000000, NO, NO</string>
-		<string>0.000000, 259.000000, 224.000000, 48.000000, NO, NO</string>
+		<string>0.000000, 0.000000, 224.000000, 255.000000, NO, NO</string>
+		<string>0.000000, 256.000000, 224.000000, 48.000000, NO, NO</string>
 	</array>
-	<key>NSTableView Columns v2 KeyBingingTable</key>
+	<key>NSTableView Columns v3 KeyBingingTable</key>
 	<data>
 	YnBsaXN0MDDUAQIDBAUGBwpYJHZlcnNpb25ZJGFyY2hpdmVyVCR0b3BYJG9iamVjdHMS
 	AAGGoF8QD05TS2V5ZWRBcmNoaXZlctEICVVBcnJheYABrgsMEx4fICEiIyQqNDU2VSRu
@@ -432,7 +432,7 @@
 	<key>NSWindow Frame NSNavPanelAutosaveName</key>
 	<string>965 332 799 448 0 0 2560 1417 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>1160 372 1222 538 0 0 2560 1417 </string>
+	<string>2560 782 1369 633 2560 0 2560 1415 </string>
 	<key>NeverWarnAboutMeta</key>
 	<true/>
 	<key>NeverWarnAboutMeta_selection</key>
@@ -1077,7 +1077,7 @@
 			<key>Normal Font</key>
 			<string>MesloLGLNer-Regular 12</string>
 			<key>Option Key Sends</key>
-			<integer>0</integer>
+			<integer>2</integer>
 			<key>Prompt Before Closing 2</key>
 			<false/>
 			<key>Right Option Key Sends</key>
@@ -1241,12 +1241,12 @@
 		<key>screenFrame</key>
 		<string>{{0, 0}, {2560, 1440}}</string>
 		<key>topLeft</key>
-		<string>{941, 1296}</string>
+		<string>{1204, 1163}</string>
 	</dict>
 	<key>NoSyncInstallationId</key>
 	<string>1CC440C4-9260-4125-8864-32E39A5FD24D</string>
 	<key>NoSyncLaunchExperienceControllerRunCount</key>
-	<integer>40</integer>
+	<integer>87</integer>
 	<key>NoSyncNextAnnoyanceTime</key>
 	<real>611767296.93451595</real>
 	<key>NoSyncOnboardingWindowHasBeenShown</key>
