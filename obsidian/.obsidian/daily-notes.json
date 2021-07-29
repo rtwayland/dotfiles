@@ -1,3 +1,4 @@
 {
-  "format": "YYYY_MM_DD"
+  "format": "YYYY_MM_DD",
+  "folder": "Daily Log"
 }
