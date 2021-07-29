@@ -56,9 +56,9 @@
         "path": ".gitconfig",
         "relink": true
       },
-      "~/.obsidian/": {
+      "~/.obsidian": {
         "create": true,
-        "path": "obsidian/.obsidian/*",
+        "path": "obsidian/.obsidian",
         "relink": true
       },
       "~/.obsidian.vimrc": {
@@ -66,9 +66,9 @@
         "path": "obsidian/.obsidian.vimrc",
         "relink": true
       },
-      "~/.config/karabiner/assets/complex_modifications/": {
+      "~/.config/karabiner/assets/complex_modifications": {
         "create": true,
-        "path": "complex_modifications/*",
+        "path": "complex_modifications",
         "relink": true
       }
     }
