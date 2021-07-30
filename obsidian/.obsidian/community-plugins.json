@@ -7,5 +7,6 @@
   "url-into-selection",
   "obsidian-outliner",
   "obsidian-zoom",
-  "templater-obsidian"
+  "templater-obsidian",
+  "obsidian-git"
 ]

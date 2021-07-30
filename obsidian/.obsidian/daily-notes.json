@@ -1,4 +1,5 @@
 {
   "format": "YYYY_MM_DD",
-  "folder": "Daily Log"
+  "folder": "Daily Log",
+  "template": "00 Meta/Templates/Daily Log Template"
 }
