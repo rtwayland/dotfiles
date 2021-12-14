@@ -1,6 +1,8 @@
 [user]
 name = Raleigh Wayland
-email = raleigh.wayland@stormapp.com
+email = rtwayland@gmail.com
 
 [pager]
 branch = false
+[pull]
+	rebase = false
