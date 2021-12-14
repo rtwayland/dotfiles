@@ -24,7 +24,6 @@ export EDITOR='nvim'
 ####################################
 # ZSH theme https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 ####################################
-# ZSH_THEME="avit"
 ZSH_THEME="powerlevel10k/powerlevel10k"
 
 ####################################
@@ -68,6 +67,11 @@ alias stash='git stash'
 alias pop='git stash pop'
 alias gapply='git stash apply'
 alias undo-commit='git reset --soft HEAD~1'
+alias list-authors='g shortlog -s -e'
+alias which-email='git config user.email'
+alias set-work-email='git config user.email raleigh.wayland@wavv.com'
+alias set-personal-email='git config user.email rtwayland@gmail.com'
+alias branches='git for-each-ref --sort=committerdate refs/heads/ --format="%(committerdate:short) %(refname:short)"'
 # Misc
 # alias opus='make opus:thefoxcodes:avrdude'
 alias qmk-dir='cd ~/qmk_firmware'
@@ -92,6 +96,7 @@ alias ea='code ~/Workspace/storm/wavv-docker/admin'
 alias ew='code ~/Workspace/storm/wavv-docker/module'
 alias hosts='sudo nvim /etc/hosts'
 alias wavv="node /Users/raleigh.wayland/Workspace/storm/wavv-docker/cli/index.js"
+alias reinstall-wavv-ui="rm -rf node_modules/wavv-ui package-lock.json && npm i"
 
 ####################################
 # Plugins ~/.oh-my-zsh/plugins/*
@@ -162,30 +167,6 @@ source $ZSH/oh-my-zsh.sh
 # Directory completion with Z
 ####################################
 . `brew --prefix`/etc/profile.d/z.sh
-
-####################################
-# Yarn config...
-####################################
-export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
-
-####################################
-# Android config
-####################################
-export ANDROID_SDK=/Users/raleigh.wayland.su/Library/Android/sdk
-export PATH=/Users/raleigh.wayland.su/Library/Android/sdk/platform-tools:$PATH
-
-####################################
-# Serverless Framework
-####################################
-# tabtab source for serverless package
-# uninstall by removing these lines or running `tabtab uninstall serverless`
-[[ -f /Users/raleigh.wayland.su/.nvm/versions/node/v12.11.1/lib/node_modules/serverless/node_modules/tabtab/.completions/serverless.zsh ]] && . /Users/raleigh.wayland.su/.nvm/versions/node/v12.11.1/lib/node_modules/serverless/node_modules/tabtab/.completions/serverless.zsh
-# tabtab source for sls package
-# uninstall by removing these lines or running `tabtab uninstall sls`
-[[ -f /Users/raleigh.wayland.su/.nvm/versions/node/v12.11.1/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh ]] && . /Users/raleigh.wayland.su/.nvm/versions/node/v12.11.1/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh
-# tabtab source for slss package
-# uninstall by removing these lines or running `tabtab uninstall slss`
-[[ -f /Users/raleigh.wayland.su/.nvm/versions/node/v12.11.1/lib/node_modules/serverless/node_modules/tabtab/.completions/slss.zsh ]] && . /Users/raleigh.wayland.su/.nvm/versions/node/v12.11.1/lib/node_modules/serverless/node_modules/tabtab/.completions/slss.zsh
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
