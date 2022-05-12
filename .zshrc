@@ -37,15 +37,10 @@ alias stmux='tmux source-file ~/.tmux.conf'
 alias tat='tmux a -t'
 alias tsave='tmux new -s'
 alias tkill='tmux kill-session -t'
-# Gulp
-alias gw='gulp -f && gulp watch -r'
-alias gs='gulp start'
 # Vim
 alias v='nvim'
 alias vmod='git ls-files -o -m --exclude-standard | xargs nvim'
 alias vdiff='git diff --name-only master | xargs nvim'
-# Package Management
-alias yarnup='yarn upgrade-interactive --latest'
 # Directories
 alias workspace='cd ~/Workspace'
 alias storm='cd ~/Workspace/storm'
@@ -79,21 +74,8 @@ alias opus='qmk flash'
 alias keymap='code ~/qmk_firmware/keyboards/opus/keymaps/thefoxcodes/keymap.c'
 alias vkeymap='nvim ~/qmk_firmware/keyboards/opus/keymaps/thefoxcodes/keymap.c'
 # Storm Dev Aliases
-# alias dev='ssh storm@devstorm'
 alias dev='ssh devstorm'
-alias dev-stage1='ssh raleigh@stagestorm1.l'
 alias keys='ssh-add && ssh-agent'
-alias mdev='sshfs storm@devstorm:/usr/local/storm ~/Workspace/storm/storm-vm'
-alias umdev='sudo umount -f ~/Workspace/storm/storm-vm'
-alias mstorm='umdev && mdev'
-alias s='cd ~/Workspace/storm/wavv-docker/core'
-alias f='cd ~/Workspace/storm/wavv-docker/core/front-end'
-alias a='cd ~/Workspace/storm/wavv-docker/admin'
-alias w='cd ~/Workspace/storm/wavv-docker/module'
-alias es='code ~/Workspace/storm/wavv-docker/core'
-alias ef='code ~/Workspace/storm/wavv-docker/core/front-end'
-alias ea='code ~/Workspace/storm/wavv-docker/admin'
-alias ew='code ~/Workspace/storm/wavv-docker/module'
 alias hosts='sudo nvim /etc/hosts'
 alias wavv="node /Users/raleigh.wayland/Workspace/storm/wavv-docker/cli/index.js"
 alias reinstall-wavv-ui="rm -rf node_modules/wavv-ui package-lock.json && npm i"
