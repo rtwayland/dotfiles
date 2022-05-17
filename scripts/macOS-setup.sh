@@ -4,7 +4,7 @@ xcode-select —-install
 # Install Homebrew
 echo "[SCRIPTS] Install Homebrew"
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> /Users/raleigh.wayland/.zprofile
+echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> /Users/$(whoami)/.zprofile
 eval "$(/opt/homebrew/bin/brew shellenv)"
 # Install ohmyzsh
 echo "[SCRIPTS] Install oh-my-zsh"
