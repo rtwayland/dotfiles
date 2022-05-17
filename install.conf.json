@@ -16,11 +16,6 @@
         "path": "vim/nvimrc",
         "relink": true
       },
-      "~/.config/nvim/UltiSnips": {
-        "create": true,
-        "path": "vim/UltiSnips",
-        "relink": true
-      },
       "~/.vim/bundle/Vundle.vim": {
         "create": true,
         "path": "vim/Vundle.vim",
@@ -54,16 +49,6 @@
       "~/.gitconfig": {
         "create": true,
         "path": ".gitconfig",
-        "relink": true
-      },
-      "~/.obsidian": {
-        "create": true,
-        "path": "obsidian/.obsidian",
-        "relink": true
-      },
-      "~/.obsidian.vimrc": {
-        "create": true,
-        "path": "obsidian/.obsidian.vimrc",
         "relink": true
       },
       "~/.config/karabiner/assets/complex_modifications": {
