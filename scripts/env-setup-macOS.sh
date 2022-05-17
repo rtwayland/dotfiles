@@ -21,6 +21,3 @@ cd .dotfiles
 git fetch && git pull
 echo "[SCRIPTS] Execute install script"
 rm ~/.zshrc && ./install
-# iTerm2 Setup
-# echo "[SCRIPTS] Download terminal font"
-# open https://github.com/ryanoasis/nerd-fonts/releases/download/v2.0.0/Meslo.zip
