@@ -21,3 +21,6 @@ cd .dotfiles
 git fetch && git pull
 echo "[SCRIPTS] Execute install script"
 rm ~/.zshrc && ./install
+# Install Node and Package Managers
+nvm install node
+npm i -g pnpm
