@@ -67,12 +67,13 @@ alias which-email='git config user.email'
 alias set-work-email='git config user.email raleigh.wayland@wavv.com'
 alias set-personal-email='git config user.email rtwayland@gmail.com'
 alias branches='git for-each-ref --sort=committerdate refs/heads/ --format="%(committerdate:short) %(refname:short)"'
-# Misc
-# alias opus='make opus:thefoxcodes:avrdude'
+# Keyboards
 alias qmk-dir='cd ~/qmk_firmware'
 alias opus='qmk flash'
 alias keymap='code ~/qmk_firmware/keyboards/opus/keymaps/thefoxcodes/keymap.c'
 alias vkeymap='nvim ~/qmk_firmware/keyboards/opus/keymaps/thefoxcodes/keymap.c'
+# Package Manager
+alias p='pnpm'
 # Storm Dev Aliases
 alias dev='ssh devstorm'
 alias keys='ssh-add && ssh-agent'
@@ -84,7 +85,7 @@ alias reinstall-wavv-ui="rm -rf node_modules/wavv-ui package-lock.json && npm i"
 # Plugins ~/.oh-my-zsh/plugins/*
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 ####################################
-plugins=(zsh-nvm git brew npm tmux vi-mode zsh-syntax-highlighting zsh-autosuggestions sudo)
+plugins=(zsh-nvm git brew npm vi-mode zsh-syntax-highlighting zsh-autosuggestions sudo)
 source $ZSH/oh-my-zsh.sh
 
 ####################################
