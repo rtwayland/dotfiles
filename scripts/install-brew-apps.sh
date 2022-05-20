@@ -9,7 +9,6 @@ brew install --cask  zoom
 brew install --cask  alfred
 brew install --cask  rectangle
 brew install --cask  karabiner-elements
-brew install --cask  logitech-options
 brew install --cask  appcleaner
 # Development
 brew install --cask  iterm2
@@ -25,3 +24,7 @@ brew install --cask scrivener
 ## CAD Design
 # brew install --cask autodesk-fusion360
 # brew install --cask qcad
+# Intel Apps
+## Install Rosetta
+/usr/sbin/softwareupdate --install-rosetta --agree-to-license
+brew install --cask  logitech-options
