@@ -9,7 +9,7 @@ brew install --cask  zoom
 brew install --cask  alfred
 brew install --cask  rectangle
 brew install --cask  karabiner-elements
-brew install --cask  homebrew/cask-drivers/logitech-options
+brew install --cask  logitech-options
 brew install --cask  appcleaner
 # Development
 brew install --cask  iterm2
