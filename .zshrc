@@ -8,7 +8,9 @@ fi
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 # Path suggested by brew
-export PATH="/usr/local/sbin:$PATH"
+# export PATH="/usr/local/sbin:$PATH"
+export PATH=$PATH:~/.local/bin
+
 ZSH_DISABLE_COMPFIX=true
 
 ####################################
@@ -38,12 +40,13 @@ alias tat='tmux a -t'
 alias tsave='tmux new -s'
 alias tkill='tmux kill-session -t'
 # Vim
-alias v='nvim'
+alias v='lvim'
 alias vmod='git ls-files -o -m --exclude-standard | xargs nvim'
 alias vdiff='git diff --name-only master | xargs nvim'
 # Directories
 alias workspace='cd ~/Workspace'
-alias storm='cd ~/Workspace/storm'
+alias notebox='~/Library/Mobile\ Documents/iCloud\~md\~obsidian/Documents/Note\ Box'
+alias wavv='cd ~/Workspace/wavv'
 alias rm-nm='find ./ -name "node_modules" -type d -prune -exec rm -rf "{}" +'
 grepTerm() {
   grep -rnw $1 -e $2
@@ -153,3 +156,8 @@ source $ZSH/oh-my-zsh.sh
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+# pnpm
+export PNPM_HOME="/Users/raleigh.wayland/Library/pnpm"
+export PATH="$PNPM_HOME:$PATH"
+# pnpm end
