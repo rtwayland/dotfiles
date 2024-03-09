@@ -27,9 +27,6 @@ Plugin 'wakatime/vim-wakatime.git'
 Plugin 'othree/yajs.vim'
 Plugin 'mxw/vim-jsx'
 Plugin 'elzr/vim-json'
-Plugin 'kchmck/vim-coffee-script'
-Plugin 'iloginow/vim-stylus'
-Plugin 'digitaltoad/vim-pug'
 Plugin 'othree/html5.vim'
 
 " Formatting and Linting
@@ -42,7 +39,7 @@ Plugin 'honza/vim-snippets'
 
 " Utils
 Plugin 'ctrlpvim/ctrlp.vim'
-Plugin 'justinmk/vim-sneak'
+" Plugin 'justinmk/vim-sneak'
 Plugin 'justinmk/vim-dirvish'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'tpope/vim-surround'

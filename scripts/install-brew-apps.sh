@@ -21,6 +21,7 @@ brew install --cask  spotify
 brew install --cask discord
 brew install --cask calibre
 brew install --cask scrivener
+brew install --cask obsidian
 ## CAD Design
 # brew install --cask autodesk-fusion360
 # brew install --cask qcad
