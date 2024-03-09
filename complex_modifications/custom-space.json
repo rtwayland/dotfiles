@@ -1,0 +1,29 @@
+{
+  "title": "Change hold space to right_option",
+  "rules": [
+    {
+      "description": "Change spacebar to right_option if pressed with other keys (Post spacebar when pressed alone)",
+      "manipulators": [
+        {
+          "from": {
+            "key_code": "spacebar",
+            "modifiers": {
+              "optional": ["any"]
+            }
+          },
+          "to": [
+            {
+              "key_code": "right_option"
+            }
+          ],
+          "to_if_alone": [
+            {
+              "key_code": "spacebar"
+            }
+          ],
+          "type": "basic"
+        }
+      ]
+    }
+  ]
+}
