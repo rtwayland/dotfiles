@@ -160,5 +160,5 @@ source $ZSH/oh-my-zsh.sh
 
 # pnpm
 export PNPM_HOME="/Users/raleigh.wayland/Library/pnpm"
-export PATH="$PNPM_HOME:$PATH"
+export PATH="$PATH:$PNPM_HOME"
 # pnpm end
